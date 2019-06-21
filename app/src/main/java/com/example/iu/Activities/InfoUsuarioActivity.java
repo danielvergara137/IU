@@ -1,8 +1,11 @@
 package com.example.iu.Activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.Toast;
 
 import com.example.iu.R;
 import com.example.iu.Utilities.ExpLVAdapter;
@@ -28,6 +31,18 @@ public class InfoUsuarioActivity extends AppCompatActivity {
         mapChild = new HashMap<>();
 
         cargarDatos();
+
+        expLV.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v,
+                                        int groupPosition, int childPosition, long id) {
+                Intent InfoSalaUsuario = new Intent(getApplicationContext(), InfoSalaUsuarioActivity.class);
+                String str_sala = mapChild.get(listCategoria.get(groupPosition)).get(childPosition);
+                InfoSalaUsuario.putExtra("sala", str_sala);
+                startActivity(InfoSalaUsuario);
+                return false;
+            }
+        });
     }
 
     private void cargarDatos(){
@@ -52,4 +67,5 @@ public class InfoUsuarioActivity extends AppCompatActivity {
         adapter = new ExpLVAdapter(listCategoria, mapChild, this);
         expLV.setAdapter(adapter);
     }
+
 }
