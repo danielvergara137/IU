@@ -1,11 +1,10 @@
 package com.example.iu.Activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ExpandableListView;
 
 import com.example.iu.R;
-import com.example.iu.Utilities.ExpLVAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -48,8 +47,9 @@ public class InfoUsuarioActivity extends AppCompatActivity {
 
         mapChild.put(listCategoria.get(0), Ingenieria);
         mapChild.put(listCategoria.get(1), Quimica);
-
+        System.out.println("wena");
         adapter = new ExpLVAdapter(listCategoria, mapChild, this);
+        System.out.println("wena");
         expLV.setAdapter(adapter);
     }
 }
