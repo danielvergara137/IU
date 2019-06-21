@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.InfoUsuarioActivity"></activity>
+        <activity
+            android:name=".Activities.info_sala"
+            android:label="@string/title_activity_info_sala"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Activities.InfoUsuarioActivity" />
         <activity android:name=".Activities.DocenteActivity" />
         <activity android:name=".Activities.UsuarioActivity" />
         <activity android:name=".Activities.MainActivity">
