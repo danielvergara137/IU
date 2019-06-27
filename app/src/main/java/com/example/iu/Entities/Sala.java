@@ -6,11 +6,13 @@ public class Sala implements Serializable {
     private String nombre;
     private String facultad;
     private int capacidad;
+    private String horario;
 
-    public Sala(String nombre, String facultad, int capacidad){
+    public Sala(String nombre, String facultad, int capacidad, String horario){
         this.nombre=nombre;
         this.facultad=facultad;
         this.capacidad=capacidad;
+        this.horario=horario;
     }
 
     public String getNombre() {
@@ -25,6 +27,10 @@ public class Sala implements Serializable {
         return capacidad;
     }
 
+    public String getHorario() {
+        return horario;
+    }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -34,4 +40,7 @@ public class Sala implements Serializable {
     }
 
     public void setCapacidad(int capacidad) { this.capacidad = capacidad; }
+
+    public void setHorario(String horario) { this.horario = horario; }
+
 }

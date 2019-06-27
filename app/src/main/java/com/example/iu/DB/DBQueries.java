@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.widget.Toast;
 
+import com.example.iu.Entities.Reserva;
 import com.example.iu.Entities.Sala;
 import com.example.iu.Entities.Usuario;
 import com.example.iu.R;
@@ -53,11 +54,23 @@ public class DBQueries {
     public static Sala getSala(String nombre, Context context){
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(context, "db", null, 1);
         SQLiteDatabase db = admin.getWritableDatabase();
-        String query = "SELECT nombre, facultad, capacidad FROM sala WHERE nombre = '" + nombre +"'";
+        String query = "SELECT nombre, facultad, capacidad, horario FROM sala WHERE nombre = '" + nombre +"'";
         Cursor cursor = db.rawQuery(query, null);
         if (cursor.moveToFirst()){
-            Sala sala = new Sala(cursor.getString(0), cursor.getString(1), cursor.getInt(2));
+            Sala sala = new Sala(cursor.getString(0), cursor.getString(1), cursor.getInt(2), cursor.getString(3));
             return sala;
+        }
+        return null;
+    }
+
+    public static Reserva getReservaInfo(String sala, int horario, Context context ){
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(context, "db", null, 1);
+        SQLiteDatabase db = admin.getWritableDatabase();
+        String query = "SELECT id, docente, sala, ramo, motivo, horario, estado FROM reserva WHERE sala = '" + sala +"' and horario = '" + horario +"'";
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.moveToFirst()){
+            Reserva reserva = new Reserva(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getInt(5), cursor.getString(6));
+            return reserva;
         }
         return null;
     }
