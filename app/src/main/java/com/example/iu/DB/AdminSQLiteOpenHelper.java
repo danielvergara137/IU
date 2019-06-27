@@ -8,7 +8,9 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
 
 
     private static final String CREATE_TABLE_USUARIO= "CREATE TABLE usuario(username text PRIMARY KEY, " +
-            "nombre text, password text, tipo text, foto blob)";
+            "nombre text, password text, tipo text)";
+    private static final String CREATE_TABLE_SALA= "CREATE TABLE sala(nombre text PRIMARY KEY, " +
+            "facultad text, capacidad int)";
 
 
     public AdminSQLiteOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -18,6 +20,13 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE_USUARIO);
+        db.execSQL(CREATE_TABLE_SALA);
+        db.execSQL("insert into usuario values('patsoto','Patricio Soto','alumno','alumno')");
+        db.execSQL("insert into usuario values('gonzalorojas','Gonzalo Rojas','profe','docente')");
+        db.execSQL("insert into usuario values('admin','Juan Riquelme','admin','admin')");
+        db.execSQL("insert into sala values('IS 2-1','Facultad de Ingeniería',45)");
+        db.execSQL("insert into sala values('IS 2-2','Facultad de Ingeniería',40)");
+
     }
 
     @Override

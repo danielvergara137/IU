@@ -1,11 +1,13 @@
-package com.example.iu.Utilities;
+package com.example.iu.Activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
+
 
 import com.example.iu.R;
 
@@ -70,11 +72,23 @@ public class ExpLVAdapter extends BaseExpandableListAdapter {
 
     @Override
     public View getChildView(int i, int i1, boolean b, View view, ViewGroup viewGroup) {
-        String item = (String) getChild(i, i1);
-        View convertView = LayoutInflater.from(context).inflate(R.layout.elv_child, null);
-        TextView tvChild = (TextView) convertView.findViewById(R.id.tvChild);
-        tvChild.setText(item);
-        return convertView;
+        if (view == null) {
+            view = LayoutInflater.from(context).inflate(R.layout.elv_child, null);
+        }
+
+        final String item = (String) getChild(i, i1);
+        System.out.println(item);
+        TextView textView = (TextView) view.findViewById(R.id.tvChild);
+        textView.setText(item);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,InfoSalaUsuarioActivity.class);
+                intent.putExtra("sala", item);
+                context.startActivity(intent);
+            }
+        });
+        return view;
     }
 
     @Override

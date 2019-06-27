@@ -33,20 +33,6 @@ public class MainActivity extends AppCompatActivity {
         username = (EditText)findViewById(R.id.MainActivity_username);
         password = (EditText)findViewById(R.id.MainActivity_password);
 
-        if(!DBQueries.isUsuarioRegistrado("danielvergara", this)) {
-            Bitmap image = BitmapFactory.decodeResource(getResources(), R.drawable.escudo);
-
-            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "db", null, 1);
-            SQLiteDatabase db = admin.getWritableDatabase();
-            ContentValues values = new ContentValues();
-            values.put("username", "danielvergara");
-            values.put("nombre", "Daniel Vergara");
-            values.put("password", "123456");
-            values.put("tipo", "alumno");
-            values.put("foto", DbBitmapUtility.getBytes(image));
-            db.insert("usuario", null, values);
-        }
-
     }
 
 

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">IU</string>
+    <string name="title_activity_info_sala_activity">info_sala_activity</string>
+    <string name="title_activity_info_sala">info_sala</string>
 </resources>

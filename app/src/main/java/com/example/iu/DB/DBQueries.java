@@ -1,13 +1,19 @@
 package com.example.iu.DB;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.widget.Toast;
 
+import com.example.iu.Entities.Sala;
 import com.example.iu.Entities.Usuario;
+import com.example.iu.R;
 
 public class DBQueries {
+
     public static boolean LoginUsuario(String username, String password, Context context){ //comingback es para iniciar automaticamente sesión
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(context, "db", null, 1);
         SQLiteDatabase db = admin.getWritableDatabase();
@@ -40,6 +46,18 @@ public class DBQueries {
         if (cursor.moveToFirst()){
             Usuario usuario = new Usuario(cursor.getString(0), cursor.getString(1), cursor.getString(2), cursor.getString(3));
             return usuario;
+        }
+        return null;
+    }
+
+    public static Sala getSala(String nombre, Context context){
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(context, "db", null, 1);
+        SQLiteDatabase db = admin.getWritableDatabase();
+        String query = "SELECT nombre, facultad, capacidad FROM sala WHERE nombre = '" + nombre +"'";
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.moveToFirst()){
+            Sala sala = new Sala(cursor.getString(0), cursor.getString(1), cursor.getInt(2));
+            return sala;
         }
         return null;
     }
