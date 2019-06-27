@@ -75,7 +75,8 @@
             <Button
                 android:id="@+id/button19"
                 android:layout_width="50dp"
-                android:layout_height="40dp" />
+                android:layout_height="40dp"
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/button20"
