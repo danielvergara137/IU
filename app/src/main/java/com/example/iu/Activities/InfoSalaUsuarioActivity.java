@@ -67,7 +67,14 @@ public class InfoSalaUsuarioActivity extends AppCompatActivity {
     }
 
     public void mostrarInfo(View view){
-        if(view==boton19) {
+        if(view==boton19 && horario.charAt(0)=='1') {
+            Reserva reserva = DBQueries.getReservaInfo(nombre, 1, this);
+            vistaramo.setText(reserva.getRamo());
+            vistaprofe.setText(reserva.getDocente());
+            vistaramo.setVisibility(View.VISIBLE);
+            vistaprofe.setVisibility(View.VISIBLE);
+        }
+        if(view==boton20 && horario.charAt(1)=='1') {
             Reserva reserva = DBQueries.getReservaInfo(nombre, 1, this);
             vistaramo.setText(reserva.getRamo());
             vistaprofe.setText(reserva.getDocente());
