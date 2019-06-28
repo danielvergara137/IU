@@ -20,14 +20,14 @@ public class DocenteActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_usuario);
+        setContentView(R.layout.activity_docente);
         getSupportActionBar().hide();
 
         usuario =(Usuario)getIntent().getSerializableExtra("usuario_entidad");
 
-        foto=(ImageView)findViewById(R.id.UsuarioActivity_foto);
-        nombre=(TextView)findViewById(R.id.UsuarioActivity_nombre);
-        tipo=(TextView)findViewById(R.id.UsuarioActivity_tipo);
+        foto=(ImageView)findViewById(R.id.DocenteActivity_foto);
+        nombre=(TextView)findViewById(R.id.DocenteActivity_nombre);
+        tipo=(TextView)findViewById(R.id.DocenteActivity_tipo);
         foto.setImageResource(R.drawable.perfil);
         nombre.setText(usuario.getNombre());
         tipo.setText("Docente");
