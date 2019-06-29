@@ -55,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
                     DocenteActivity.putExtra("usuario_entidad", usuario);
                     startActivity(DocenteActivity);
                 }
+                else if (usuario.getTipo().equals("admin")){
+                    Intent AdminActivity = new Intent(this, AdminActivity.class);
+                    AdminActivity.putExtra("usuario_entidad", usuario);
+                    startActivity(AdminActivity);
+                }
                 this.finish();
             }
         }

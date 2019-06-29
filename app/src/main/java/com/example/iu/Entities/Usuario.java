@@ -29,9 +29,7 @@ public class Usuario implements Serializable {
         return password;
     }
 
-    public String getTipo() {
-        return tipo;
-    }
+    public String getTipo() { return tipo; }
 
     public void setUsername(String username) {
         this.username = username;
