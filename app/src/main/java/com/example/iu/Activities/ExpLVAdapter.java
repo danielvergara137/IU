@@ -9,6 +9,7 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 
 
+import com.example.iu.Entities.Usuario;
 import com.example.iu.R;
 
 import java.util.ArrayList;
@@ -19,11 +20,17 @@ public class ExpLVAdapter extends BaseExpandableListAdapter {
     private ArrayList<String> listCategoria;
     private Map<String, ArrayList<String>> mapChild;
     private Context context;
+    private Usuario usuario;
 
-    public ExpLVAdapter(ArrayList<String> listCategoria, Map<String, ArrayList<String>> mapChild, Context context) {
+    public ExpLVAdapter(ArrayList<String> listCategoria, Map<String, ArrayList<String>> mapChild, Context context, Usuario usuario) {
         this.listCategoria = listCategoria;
         this.mapChild = mapChild;
         this.context = context;
+        this.usuario = usuario;
+    }
+
+    public Usuario getUsuario(){
+        return usuario;
     }
 
     @Override
@@ -85,6 +92,7 @@ public class ExpLVAdapter extends BaseExpandableListAdapter {
             public void onClick(View v) {
                 Intent intent = new Intent(context,InfoSalaUsuarioActivity.class);
                 intent.putExtra("sala", item);
+                intent.putExtra("usuario_entidad", usuario);
                 context.startActivity(intent);
             }
         });

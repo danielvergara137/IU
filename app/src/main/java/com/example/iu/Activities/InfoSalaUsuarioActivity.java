@@ -1,5 +1,6 @@
 package com.example.iu.Activities;
 
+import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,11 +13,13 @@ import android.widget.TextView;
 import com.example.iu.DB.DBQueries;
 import com.example.iu.Entities.Reserva;
 import com.example.iu.Entities.Sala;
+import com.example.iu.Entities.Usuario;
 import com.example.iu.R;
 
 public class InfoSalaUsuarioActivity extends AppCompatActivity {
 
     private Sala sala;
+    private Usuario usuario;
     private ImageButton backButton;
     private String nombre;
     private String horario;
@@ -99,7 +102,8 @@ public class InfoSalaUsuarioActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_sala_usuario);
         getSupportActionBar().hide();
-
+        usuario =(Usuario)getIntent().getSerializableExtra("usuario_entidad");
+        System.out.println(usuario.getNombre());
         backButton = (ImageButton)findViewById(R.id.info_sala_button_back);
         nombre = (String)getIntent().getSerializableExtra("sala");
         sala = DBQueries.getSala(nombre,this);
@@ -344,5 +348,12 @@ public class InfoSalaUsuarioActivity extends AppCompatActivity {
     }
     public void back(View view){
         super.onBackPressed();
+    }
+
+    public void home(View view){
+        System.out.println(usuario.getNombre());
+        Intent UsuarioActivity = new Intent(this, UsuarioActivity.class);
+        UsuarioActivity.putExtra("usuario_entidad", usuario);
+        startActivity(UsuarioActivity);
     }
 }
