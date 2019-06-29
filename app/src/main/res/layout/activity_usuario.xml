@@ -33,13 +33,23 @@
         android:id="@+id/UsuarioActivity_mapa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:layout_marginBottom="246dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="60dp"
         android:backgroundTint="#00BCD4"
         android:text="Ver mapa"
+        app:layout_constraintBottom_toTopOf="@+id/botonScan"
+        app:layout_constraintEnd_toEndOf="@+id/botonScan" />
+
+    <Button
+        android:id="@+id/botonScan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:onClick="btnScan"
+        android:text="Escanear QR"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/UsuarioActivity_disp"
-        app:layout_constraintTop_toBottomOf="@+id/UsuarioActivity_disp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/UsuarioActivity_foto"

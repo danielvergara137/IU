@@ -2,8 +2,10 @@ package com.example.iu.Activities;
 
 
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import android.os.Bundle;
@@ -15,13 +17,16 @@ import com.example.iu.DB.DBQueries;
 import com.example.iu.Entities.Sala;
 import com.example.iu.Entities.Usuario;
 import com.example.iu.R;
+import com.google.zxing.Result;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class InfoUsuarioActivity extends AppCompatActivity {
+import me.dm7.barcodescanner.zxing.ZXingScannerView;
+
+public class InfoUsuarioActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
     private ExpandableListView expLV;
     private Usuario usuario;
@@ -29,6 +34,7 @@ public class InfoUsuarioActivity extends AppCompatActivity {
     private ExpLVAdapter adapter;
     private ArrayList<String> listCategoria;
     private Map<String, ArrayList<String>> mapChild;
+    private ZXingScannerView mScannerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +46,6 @@ public class InfoUsuarioActivity extends AppCompatActivity {
         expLV = (ExpandableListView) findViewById(R.id.expLV);
         listCategoria = new ArrayList<>();
         mapChild = new HashMap<>();
-
         cargarDatos();
     }
 
@@ -67,4 +72,23 @@ public class InfoUsuarioActivity extends AppCompatActivity {
         expLV.setAdapter(adapter);
     }
 
+    public void btnScan(View view){
+        mScannerView = new ZXingScannerView(this);
+        setContentView(mScannerView);
+        mScannerView.setResultHandler(this);
+        mScannerView.startCamera();
+    }
+
+    @Override
+    public void handleResult(Result rawResult) {
+        Log.v("HandleResult", rawResult.getText());
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Resultado del Scan");
+        builder.setMessage(rawResult.getText());
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+        mScannerView.resumeCameraPreview(this);
+
+    }
 }
