@@ -12,7 +12,10 @@ import android.widget.TextView;
 import com.example.iu.DB.DBQueries;
 import com.example.iu.Entities.Reserva;
 import com.example.iu.Entities.Sala;
+import com.example.iu.Entities.Usuario;
 import com.example.iu.R;
+
+import java.util.List;
 
 public class InfoSalaUsuarioActivity extends AppCompatActivity {
 
@@ -25,7 +28,7 @@ public class InfoSalaUsuarioActivity extends AppCompatActivity {
     private TextView vistaramo;
     private TextView vistaprofe;
     private TextView vistacorreo;
-    private LinearLayout reserva;
+    private List<Reserva> reservas;
     private Button b00;
     private Button b01;
     private Button b02;
@@ -104,12 +107,15 @@ public class InfoSalaUsuarioActivity extends AppCompatActivity {
         nombre = (String)getIntent().getSerializableExtra("sala");
         sala = DBQueries.getSala(nombre,this);
         horario = sala.getHorario();
+        reservas = DBQueries.getReservas(nombre, this);
         vistanombre = (TextView)findViewById(R.id.InfoSalaUsuarioActivity_sala);
         vistacapacidad = (TextView)findViewById(R.id.InfoSalaUsuarioActivity_capacidad);
         vistaramo = (TextView)findViewById(R.id.InfoSalaUsuarioActivity_ramo);
         vistaprofe = (TextView)findViewById(R.id.InfoSalaUsuarioActivity_profe);
+        vistacorreo = (TextView)findViewById(R.id.InfoSalaUsuarioActivity_correo);
         vistaramo.setVisibility(View.INVISIBLE);
         vistaprofe.setVisibility(View.INVISIBLE);
+        vistacorreo.setVisibility(View.INVISIBLE);
         b00 = findViewById(R.id.b00);
         b01 = findViewById(R.id.b01);
         b02 = findViewById(R.id.b02);
@@ -334,12 +340,32 @@ public class InfoSalaUsuarioActivity extends AppCompatActivity {
 
     public void mostrarInfo(View view){
         if(view==b11) {
-            Reserva reserva = DBQueries.getReservaInfo(nombre, 1, this);
-            System.out.println(reserva.getRamo());
-            vistaramo.setText(reserva.getRamo());
-            vistaprofe.setText(reserva.getDocente());
-            vistaramo.setVisibility(View.VISIBLE);
-            vistaprofe.setVisibility(View.VISIBLE);
+            Reserva reserva = buscar(0);
+            if(reserva != null) {
+                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
+                vistaramo.setText(reserva.getRamo());
+                vistaprofe.setText(docente.getNombre());
+                vistacorreo.setText(docente.getUsername() + "@udec.cl");
+                vistaramo.setVisibility(View.VISIBLE);
+                vistaprofe.setVisibility(View.VISIBLE);
+                vistacorreo.setVisibility(View.VISIBLE);
+            }
+            else{
+                vistaramo.setVisibility(View.INVISIBLE);
+                vistaprofe.setVisibility(View.INVISIBLE);
+                vistacorreo.setVisibility(View.INVISIBLE);
+            }
         }
+    }
+
+    public Reserva buscar(int hora){
+        for(int i=0; i < reservas.size(); i++){
+            Reserva reserva = reservas.get(i);
+            String horasreserva = reserva.getHorario();
+            if(horasreserva.charAt(hora)=='1' && reserva.getEstado().equals("aceptada")){
+                return reserva;
+            }
+        }
+        return null;
     }
 }

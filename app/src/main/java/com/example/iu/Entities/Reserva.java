@@ -8,10 +8,10 @@ public class Reserva implements Serializable {
     private String sala;
     private String ramo;
     private String motivo;
-    private int horario;
+    private String horario;
     private String estado;
 
-    public Reserva(int id, String docente, String sala, String ramo, String motivo, int horario, String estado){
+    public Reserva(int id, String docente, String sala, String ramo, String motivo, String horario, String estado){
         this.id=id;
         this.docente=docente;
         this.sala=sala;
@@ -39,7 +39,7 @@ public class Reserva implements Serializable {
         return motivo;
     }
 
-    public int getHorario() {
+    public String getHorario() {
         return horario;
     }
 
@@ -57,7 +57,7 @@ public class Reserva implements Serializable {
 
     public void setMotivo(String motivo) { this.motivo=motivo; }
 
-    public void setHorario(int horario) { this.horario=horario; }
+    public void setHorario(String horario) { this.horario=horario; }
 
     public void setEstado(String estado) { this.estado=estado; }
 

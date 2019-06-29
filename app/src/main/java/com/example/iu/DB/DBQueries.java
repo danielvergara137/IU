@@ -13,6 +13,9 @@ import com.example.iu.Entities.Sala;
 import com.example.iu.Entities.Usuario;
 import com.example.iu.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DBQueries {
 
     public static boolean LoginUsuario(String username, String password, Context context){ //comingback es para iniciar automaticamente sesión
@@ -63,15 +66,23 @@ public class DBQueries {
         return null;
     }
 
-    public static Reserva getReservaInfo(String sala, int horario, Context context ){
+    public static List<Reserva> getReservas(String sala, Context context ){
+        List<Reserva> reservas = new ArrayList<>();
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(context, "db", null, 1);
         SQLiteDatabase db = admin.getWritableDatabase();
-        String query = "SELECT id, docente, sala, ramo, motivo, horario, estado FROM reserva WHERE sala = '" + sala +"' and horario = '" + horario +"'";
+        String query = "SELECT id, docente, sala, ramo, motivo, horario, estado FROM reserva WHERE sala = '" + sala + "'";
         Cursor cursor = db.rawQuery(query, null);
-        if (cursor.moveToFirst()){
-            Reserva reserva = new Reserva(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getInt(5), cursor.getString(6));
-            return reserva;
+        if (cursor.moveToFirst()) {
+            do {
+                reservas.add(new Reserva(cursor.getInt(0), //id
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3),
+                        cursor.getString(4),
+                        cursor.getString(5),
+                        cursor.getString(6)));
+            } while (cursor.moveToNext());
         }
-        return null;
+        return reservas;
     }
 }

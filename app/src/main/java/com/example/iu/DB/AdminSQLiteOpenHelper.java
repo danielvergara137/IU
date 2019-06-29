@@ -12,7 +12,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     private static final String CREATE_TABLE_SALA= "CREATE TABLE sala(nombre text PRIMARY KEY, " +
             "facultad text, capacidad int, horario text)";
     private static final String CREATE_TABLE_RESERVA= "CREATE TABLE reserva(id int PRIMARY KEY, " +
-            "docente text, sala text, ramo text, motivo text, horario int, estado text)";
+            "docente text, sala text, ramo text, motivo text, horario text, estado text)";
 
 
     public AdminSQLiteOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -29,7 +29,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
         db.execSQL("insert into usuario values('admin','Juan Riquelme','admin','admin')");
         db.execSQL("insert into sala values('IS 2-1','Facultad de Ingeniería',45,'10000010000000000000000000000000000000000000000000')");
         db.execSQL("insert into sala values('IS 2-2','Facultad de Ingeniería',40,'00000010000000000000000000000000000000000000000000')");
-        db.execSQL("insert into reserva values(1,'Gonzalo Rojas','IS 2-1','IS1','pq si',1,'aceptada')");
+        db.execSQL("insert into reserva values(1,'gonzalorojas','IS 2-1','Ing. Software 1','pq si','10000010000000000000000000000000000000000000000000','aceptada')");
 
     }
 
