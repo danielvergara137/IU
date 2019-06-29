@@ -26,7 +26,7 @@ import java.util.Map;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
-public class InfoUsuarioActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
+public class InfoUsuarioActivity extends AppCompatActivity {
 
     private ExpandableListView expLV;
     private Usuario usuario;
@@ -34,7 +34,7 @@ public class InfoUsuarioActivity extends AppCompatActivity implements ZXingScann
     private ExpLVAdapter adapter;
     private ArrayList<String> listCategoria;
     private Map<String, ArrayList<String>> mapChild;
-    private ZXingScannerView mScannerView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,23 +72,4 @@ public class InfoUsuarioActivity extends AppCompatActivity implements ZXingScann
         expLV.setAdapter(adapter);
     }
 
-    public void btnScan(View view){
-        mScannerView = new ZXingScannerView(this);
-        setContentView(mScannerView);
-        mScannerView.setResultHandler(this);
-        mScannerView.startCamera();
-    }
-
-    @Override
-    public void handleResult(Result rawResult) {
-        Log.v("HandleResult", rawResult.getText());
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Resultado del Scan");
-        builder.setMessage(rawResult.getText());
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
-
-        mScannerView.resumeCameraPreview(this);
-
-    }
 }

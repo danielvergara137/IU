@@ -1,22 +1,28 @@
 package com.example.iu.Activities;
 
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.iu.Entities.Usuario;
 import com.example.iu.R;
+import com.google.zxing.Result;
 
-public class UsuarioActivity extends AppCompatActivity {
+import me.dm7.barcodescanner.zxing.ZXingScannerView;
+
+public class UsuarioActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler{
 
     private ImageView foto;
     private TextView nombre;
     private TextView tipo;
     private Usuario usuario;
+    private ZXingScannerView mScannerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,4 +60,24 @@ public class UsuarioActivity extends AppCompatActivity {
         Intent MapaActivity = new Intent(this, MapaUsuarioActivity.class);
         startActivity(MapaActivity);
     }*/
+public void btnScan(View view){
+    mScannerView = new ZXingScannerView(this);
+    setContentView(mScannerView);
+    mScannerView.setResultHandler(this);
+    mScannerView.startCamera();
+}
+
+    @Override
+    public void handleResult(Result rawResult) {
+        Log.v("HandleResult", rawResult.getText());
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Resultado del Scan");
+        builder.setMessage(rawResult.getText());
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+        mScannerView.resumeCameraPreview(this);
+
+    }
+
 }
