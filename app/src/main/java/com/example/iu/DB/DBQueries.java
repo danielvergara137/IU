@@ -85,4 +85,21 @@ public class DBQueries {
         }
         return reservas;
     }
+
+    public static List<Sala> getSalas(String facultad, Context context ){
+        List<Sala> salas = new ArrayList<>();
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(context, "db", null, 1);
+        SQLiteDatabase db = admin.getWritableDatabase();
+        String query = "SELECT * FROM sala WHERE facultad = '" + facultad + "'";
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.moveToFirst()) {
+            do {
+                salas.add(new Sala(cursor.getString(0), //id
+                        cursor.getString(1),
+                        cursor.getInt(2),
+                        cursor.getString(3)));
+            } while (cursor.moveToNext());
+        }
+        return salas;
+    }
 }
