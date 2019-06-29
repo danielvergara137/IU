@@ -342,4 +342,7 @@ public class InfoSalaUsuarioActivity extends AppCompatActivity {
             vistaprofe.setVisibility(View.VISIBLE);
         }
     }
+    public void back(View view){
+        super.onBackPressed();
+    }
 }
