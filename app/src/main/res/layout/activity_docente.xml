@@ -6,4 +6,88 @@
     android:layout_height="match_parent"
     tools:context=".Activities.DocenteActivity">
 
+    <Button
+        android:id="@+id/DocenteActivity_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginBottom="60dp"
+        android:backgroundTint="#00BCD4"
+        android:onClick="info"
+        android:text="Consultar información de salas"
+        app:layout_constraintBottom_toTopOf="@+id/DocenteActivity_disp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DocenteActivity_tipo" />
+
+    <Button
+        android:id="@+id/DocenteActivity_disp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="52dp"
+        android:backgroundTint="#00BCD4"
+        android:onClick="disp"
+        android:text="Consultar disponibilidad de salas"
+        app:layout_constraintBottom_toTopOf="@+id/DocenteActivity_mapa"
+        app:layout_constraintStart_toStartOf="@+id/DocenteActivity_info"
+        app:layout_constraintTop_toBottomOf="@+id/DocenteActivity_info" />
+
+    <Button
+        android:id="@+id/DocenteActivity_mapa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginBottom="246dp"
+        android:backgroundTint="#00BCD4"
+        android:text="Ver mapa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/DocenteActivity_disp"
+        app:layout_constraintTop_toBottomOf="@+id/DocenteActivity_disp" />
+
+    <ImageView
+        android:id="@+id/DocenteActivity_foto"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="224dp"
+        app:layout_constraintBottom_toBottomOf="@+id/DocenteActivity_nombre"
+        app:layout_constraintEnd_toStartOf="@+id/DocenteActivity_salir"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DocenteActivity_nombre" />
+
+    <TextView
+        android:id="@+id/DocenteActivity_nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:layout_marginBottom="10dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/DocenteActivity_tipo"
+        app:layout_constraintStart_toStartOf="@+id/DocenteActivity_tipo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/DocenteActivity_tipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="250dp"
+        android:layout_marginBottom="139dp"
+        android:text="Alumno"
+        app:layout_constraintBottom_toTopOf="@+id/DocenteActivity_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/DocenteActivity_foto"
+        app:layout_constraintTop_toBottomOf="@+id/DocenteActivity_nombre" />
+
+    <Button
+        android:id="@+id/DocenteActivity_salir"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="29dp"
+        android:backgroundTint="#00BCD4"
+        android:onClick="salir"
+        android:text="Salir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/DocenteActivity_foto"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </android.support.constraint.ConstraintLayout>
