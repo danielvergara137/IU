@@ -48,6 +48,7 @@ public class DispDocenteActivity extends AppCompatActivity {
     }
 
     public void marcar(View view){
+
         view.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
     }
 

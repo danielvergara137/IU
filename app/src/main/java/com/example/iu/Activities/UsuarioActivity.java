@@ -75,6 +75,10 @@ public void btnScan(View view){
         builder.setMessage(rawResult.getText());
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+        Intent intent = new Intent(this, InfoSalaUsuarioActivity.class);
+        intent.putExtra("sala", rawResult.getText());
+        intent.putExtra("usuario_entidad", usuario);
+        startActivity(intent);
 
         mScannerView.resumeCameraPreview(this);
 

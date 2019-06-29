@@ -12,12 +12,10 @@
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="56dp"
-        android:layout_marginEnd="28dp"
         android:layout_marginBottom="51dp"
         android:onClick="back"
         android:src="@drawable/ic_action_name"
         app:layout_constraintBottom_toTopOf="@+id/InfoSalaUsuarioActivity_sala"
-        app:layout_constraintEnd_toStartOf="@+id/InfoSalaUsuarioActivity_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -56,19 +54,6 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/InfoSalaUsuarioActivity_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="70dp"
-        android:text="Información Sala"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/info_sala_button_back"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
         android:id="@+id/tableLayout2"
@@ -136,32 +121,32 @@
                 android:id="@+id/b11"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
 
             <Button
                 android:id="@+id/b12"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b13"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b14"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b15"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
         </TableRow>
 
@@ -179,31 +164,31 @@
                 android:id="@+id/b21"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b22"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b23"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b24"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b25"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
         </TableRow>
 
@@ -221,31 +206,31 @@
                 android:id="@+id/b31"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b32"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b33"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b34"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b35"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
         </TableRow>
 
@@ -263,31 +248,31 @@
                 android:id="@+id/b41"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b42"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b43"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b44"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b45"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
         </TableRow>
 
@@ -305,31 +290,31 @@
                 android:id="@+id/b51"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b52"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b53"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b54"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b55"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
         </TableRow>
 
@@ -347,31 +332,31 @@
                 android:id="@+id/b61"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b62"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b63"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b64"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b65"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
         </TableRow>
 
@@ -389,31 +374,31 @@
                 android:id="@+id/b71"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b72"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b73"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b74"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b75"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
         </TableRow>
 
@@ -431,31 +416,31 @@
                 android:id="@+id/b81"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b82"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b83"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b84"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b85"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
         </TableRow>
 
@@ -473,31 +458,31 @@
                 android:id="@+id/b91"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b92"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b93"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b94"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b95"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
         </TableRow>
 
         <TableRow
@@ -515,31 +500,31 @@
                 android:id="@+id/b101"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b102"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b103"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b104"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
 
             <Button
                 android:id="@+id/b105"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"/>
+                android:onClick="mostrarInfo" />
         </TableRow>
     </TableLayout>
 
