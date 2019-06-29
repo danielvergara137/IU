@@ -23,7 +23,6 @@ public class SolsActivity extends AppCompatActivity {
     }
 
     public void back(View view){
-        Intent MainActivity = new Intent(this, MainActivity.class);
-        startActivity(MainActivity);
+        super.onBackPressed();
     }
 }

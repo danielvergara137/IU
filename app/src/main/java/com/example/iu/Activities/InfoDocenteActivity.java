@@ -19,6 +19,7 @@ public class InfoDocenteActivity extends AppCompatActivity {
 
     private ExpandableListView expLV;
     private ExpLVAdapter adapter;
+    private Usuario usuario;
     private ArrayList<String> listCategoria;
     private Map<String, ArrayList<String>> mapChild;
 
@@ -26,24 +27,12 @@ public class InfoDocenteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_docente);
-
+        usuario =(Usuario)getIntent().getSerializableExtra("usuario_entidad");
         expLV = (ExpandableListView) findViewById(R.id.expLV);
         listCategoria = new ArrayList<>();
         mapChild = new HashMap<>();
 
         cargarDatos();
-
-        expLV.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-            @Override
-            public boolean onChildClick(ExpandableListView parent, View v,
-                                        int groupPosition, int childPosition, long id) {
-                Intent InfoSalaUsuario = new Intent(getApplicationContext(), InfoSalaUsuarioActivity.class);
-                String str_sala = mapChild.get(listCategoria.get(groupPosition)).get(childPosition);
-                InfoSalaUsuario.putExtra("sala", str_sala);
-                startActivity(InfoSalaUsuario);
-                return false;
-            }
-        });
     }
 
     private void cargarDatos(){
@@ -65,7 +54,7 @@ public class InfoDocenteActivity extends AppCompatActivity {
         mapChild.put(listCategoria.get(0), Ingenieria);
         mapChild.put(listCategoria.get(1), Quimica);
         System.out.println("wena");
-        adapter = new ExpLVAdapter(listCategoria, mapChild, this);
+        adapter = new ExpLVAdapter(listCategoria, mapChild, this, usuario);
         System.out.println("hola");
         expLV.setAdapter(adapter);
     }
