@@ -109,12 +109,15 @@ public class InfoSalaUsuarioActivity extends AppCompatActivity {
         nombre = (String)getIntent().getSerializableExtra("sala");
         sala = DBQueries.getSala(nombre,this);
         horario = sala.getHorario();
+        reservas = DBQueries.getReservas(nombre, this);
         vistanombre = (TextView)findViewById(R.id.InfoSalaUsuarioActivity_sala);
         vistacapacidad = (TextView)findViewById(R.id.InfoSalaUsuarioActivity_capacidad);
         vistaramo = (TextView)findViewById(R.id.InfoSalaUsuarioActivity_ramo);
         vistaprofe = (TextView)findViewById(R.id.InfoSalaUsuarioActivity_profe);
+        vistacorreo = (TextView)findViewById(R.id.InfoSalaUsuarioActivity_correo);
         vistaramo.setVisibility(View.INVISIBLE);
         vistaprofe.setVisibility(View.INVISIBLE);
+        vistacorreo.setVisibility(View.INVISIBLE);
         b00 = findViewById(R.id.b00);
         b01 = findViewById(R.id.b01);
         b02 = findViewById(R.id.b02);
