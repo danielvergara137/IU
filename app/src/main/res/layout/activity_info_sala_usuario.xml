@@ -6,55 +6,66 @@
     android:layout_height="match_parent"
     tools:context=".Activities.InfoSalaUsuarioActivity">
 
+    <ImageButton
+        android:id="@+id/info_sala_button_back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="51dp"
+        android:src="@drawable/ic_action_name"
+        app:layout_constraintBottom_toTopOf="@+id/InfoSalaUsuarioActivity_sala"
+        app:layout_constraintEnd_toStartOf="@+id/InfoSalaUsuarioActivity_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/InfoSalaUsuarioActivity_capacidad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="20dp"
         android:text="Capacidad"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/info_sala_button_back" />
 
     <TextView
         android:id="@+id/InfoSalaUsuarioActivity_sala"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="540dp"
         android:text="Sala"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.109"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/InfoSalaUsuarioActivity_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="70dp"
         android:text="Información Sala"
+        android:textAlignment="center"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/InfoSalaUsuarioActivity_sala"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.92" />
+        app:layout_constraintStart_toEndOf="@+id/info_sala_button_back"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
         android:id="@+id/tableLayout2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/InfoSalaUsuarioActivity_capacidad">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TableRow
             android:layout_width="wrap_content"
@@ -282,7 +293,7 @@
                 android:layout_height="35dp" />
 
             <Button
-                android:id="@+id/b055"
+                android:id="@+id/b55"
                 android:layout_width="50dp"
                 android:layout_height="35dp" />
 
@@ -480,15 +491,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="5dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="#8BC34A"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout2">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/InfoSalaUsuarioActivity_ramo"
