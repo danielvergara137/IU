@@ -24,9 +24,9 @@ public class InfoSalaUsuarioActivity extends AppCompatActivity {
     private TextView vistaprofe;
     private TextView vistacorreo;
     private LinearLayout reserva;
-    private Button b10;
-    private Button b20;
-    private Button b30;
+    private Button b11;
+    private Button b21;
+    private Button b31;
 
 
     @Override
@@ -44,27 +44,27 @@ public class InfoSalaUsuarioActivity extends AppCompatActivity {
         vistaprofe = (TextView)findViewById(R.id.InfoSalaUsuarioActivity_profe);
         vistaramo.setVisibility(View.INVISIBLE);
         vistaprofe.setVisibility(View.INVISIBLE);
-        b10 = (Button)findViewById(R.id.b10);
-        b20 = (Button)findViewById(R.id.b20);
-        b30 = (Button)findViewById(R.id.b30);
+        b11 = (Button)findViewById(R.id.b11);
+        b21 = (Button)findViewById(R.id.b21);
+        b31 = (Button)findViewById(R.id.b31);
 
         vistanombre.setText("Sala: " + sala.getNombre());
         vistacapacidad.setText("Capacidad: " + String.valueOf(sala.getCapacidad()));
 
         if(horario.charAt(0)=='1') {
-            b10.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b11.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
         }
         if(horario.charAt(1)=='1') {
-            b20.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b21.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
         }
         if(horario.charAt(2)=='1') {
-            b30.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b31.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
         }
 
     }
 
     public void mostrarInfo(View view){
-        if(view==b10) {
+        if(view==b11) {
             Reserva reserva = DBQueries.getReservaInfo(nombre, 1, this);
             vistaramo.setText(reserva.getRamo());
             vistaprofe.setText(reserva.getDocente());
