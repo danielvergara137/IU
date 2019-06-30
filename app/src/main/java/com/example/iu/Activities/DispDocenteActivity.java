@@ -190,6 +190,497 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b11.getBackground().clearColorFilter();
             }
         }
+        else if(view==b12){
+            if(b12.isSelected()==false) {
+                b12.setSelected(true);
+                b12.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b12.isSelected()==true){
+                b12.setSelected(false);
+                b12.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b13){
+            if(b13.isSelected()==false) {
+                b13.setSelected(true);
+                b13.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b13.isSelected()==true){
+                b13.setSelected(false);
+                b13.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b14){
+            if(b14.isSelected()==false) {
+                b14.setSelected(true);
+                b14.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b14.isSelected()==true){
+                b14.setSelected(false);
+                b14.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b15){
+            if(b15.isSelected()==false) {
+                b15.setSelected(true);
+                b15.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b15.isSelected()==true){
+                b15.setSelected(false);
+                b15.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b21){
+            if(b21.isSelected()==false) {
+                b21.setSelected(true);
+                b21.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b21.isSelected()==true){
+                b21.setSelected(false);
+                b21.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b22){
+            if(b22.isSelected()==false) {
+                b22.setSelected(true);
+                b22.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b22.isSelected()==true){
+                b22.setSelected(false);
+                b22.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b23){
+            if(b23.isSelected()==false) {
+                b23.setSelected(true);
+                b23.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b23.isSelected()==true){
+                b23.setSelected(false);
+                b23.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b24){
+            if(b24.isSelected()==false) {
+                b24.setSelected(true);
+                b24.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b24.isSelected()==true){
+                b24.setSelected(false);
+                b24.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b25){
+            if(b25.isSelected()==false) {
+                b25.setSelected(true);
+                b25.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b25.isSelected()==true){
+                b25.setSelected(false);
+                b25.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b31){
+            if(b31.isSelected()==false) {
+                b31.setSelected(true);
+                b31.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b31.isSelected()==true){
+                b31.setSelected(false);
+                b31.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b32){
+            if(b32.isSelected()==false) {
+                b32.setSelected(true);
+                b32.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b32.isSelected()==true){
+                b32.setSelected(false);
+                b32.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b33){
+            if(b33.isSelected()==false) {
+                b33.setSelected(true);
+                b33.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b33.isSelected()==true){
+                b33.setSelected(false);
+                b33.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b34){
+            if(b34.isSelected()==false) {
+                b34.setSelected(true);
+                b34.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b34.isSelected()==true){
+                b34.setSelected(false);
+                b34.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b35){
+            if(b35.isSelected()==false) {
+                b35.setSelected(true);
+                b35.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b35.isSelected()==true){
+                b35.setSelected(false);
+                b35.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b41){
+            if(b41.isSelected()==false) {
+                b41.setSelected(true);
+                b41.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b41.isSelected()==true){
+                b41.setSelected(false);
+                b41.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b42){
+            if(b42.isSelected()==false) {
+                b42.setSelected(true);
+                b42.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b42.isSelected()==true){
+                b42.setSelected(false);
+                b42.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b43){
+            if(b43.isSelected()==false) {
+                b43.setSelected(true);
+                b43.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b43.isSelected()==true){
+                b43.setSelected(false);
+                b43.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b44){
+            if(b44.isSelected()==false) {
+                b44.setSelected(true);
+                b44.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b44.isSelected()==true){
+                b44.setSelected(false);
+                b44.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b45){
+            if(b45.isSelected()==false) {
+                b45.setSelected(true);
+                b45.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b45.isSelected()==true){
+                b45.setSelected(false);
+                b45.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b51){
+            if(b51.isSelected()==false) {
+                b51.setSelected(true);
+                b51.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b51.isSelected()==true){
+                b51.setSelected(false);
+                b51.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b52){
+            if(b52.isSelected()==false) {
+                b52.setSelected(true);
+                b52.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b52.isSelected()==true){
+                b52.setSelected(false);
+                b52.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b53){
+            if(b53.isSelected()==false) {
+                b53.setSelected(true);
+                b53.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b53.isSelected()==true){
+                b53.setSelected(false);
+                b53.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b54){
+            if(b54.isSelected()==false) {
+                b54.setSelected(true);
+                b54.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b54.isSelected()==true){
+                b54.setSelected(false);
+                b54.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b55){
+            if(b55.isSelected()==false) {
+                b55.setSelected(true);
+                b55.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b55.isSelected()==true){
+                b55.setSelected(false);
+                b55.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b61){
+            if(b61.isSelected()==false) {
+                b61.setSelected(true);
+                b61.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b61.isSelected()==true){
+                b61.setSelected(false);
+                b61.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b62){
+            if(b62.isSelected()==false) {
+                b62.setSelected(true);
+                b62.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b62.isSelected()==true){
+                b62.setSelected(false);
+                b62.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b63){
+            if(b63.isSelected()==false) {
+                b63.setSelected(true);
+                b63.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b63.isSelected()==true){
+                b63.setSelected(false);
+                b63.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b64){
+            if(b64.isSelected()==false) {
+                b64.setSelected(true);
+                b64.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b64.isSelected()==true){
+                b64.setSelected(false);
+                b64.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b65){
+            if(b65.isSelected()==false) {
+                b65.setSelected(true);
+                b65.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b65.isSelected()==true){
+                b65.setSelected(false);
+                b65.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b71){
+            if(b71.isSelected()==false) {
+                b71.setSelected(true);
+                b71.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b71.isSelected()==true){
+                b71.setSelected(false);
+                b71.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b72){
+            if(b72.isSelected()==false) {
+                b72.setSelected(true);
+                b72.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b72.isSelected()==true){
+                b72.setSelected(false);
+                b72.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b73){
+            if(b73.isSelected()==false) {
+                b73.setSelected(true);
+                b73.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b73.isSelected()==true){
+                b73.setSelected(false);
+                b73.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b74){
+            if(b74.isSelected()==false) {
+                b74.setSelected(true);
+                b74.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b74.isSelected()==true){
+                b74.setSelected(false);
+                b74.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b75){
+            if(b75.isSelected()==false) {
+                b75.setSelected(true);
+                b75.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b75.isSelected()==true){
+                b75.setSelected(false);
+                b75.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b81){
+            if(b81.isSelected()==false) {
+                b81.setSelected(true);
+                b81.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b81.isSelected()==true){
+                b81.setSelected(false);
+                b81.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b82){
+            if(b82.isSelected()==false) {
+                b82.setSelected(true);
+                b82.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b82.isSelected()==true){
+                b82.setSelected(false);
+                b82.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b83){
+            if(b83.isSelected()==false) {
+                b83.setSelected(true);
+                b83.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b83.isSelected()==true){
+                b83.setSelected(false);
+                b83.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b84){
+            if(b84.isSelected()==false) {
+                b84.setSelected(true);
+                b84.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b84.isSelected()==true){
+                b84.setSelected(false);
+                b84.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b85){
+            if(b85.isSelected()==false) {
+                b85.setSelected(true);
+                b85.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b85.isSelected()==true){
+                b85.setSelected(false);
+                b85.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b91){
+            if(b91.isSelected()==false) {
+                b91.setSelected(true);
+                b91.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b91.isSelected()==true){
+                b91.setSelected(false);
+                b91.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b92){
+            if(b92.isSelected()==false) {
+                b92.setSelected(true);
+                b92.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b92.isSelected()==true){
+                b92.setSelected(false);
+                b92.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b93){
+            if(b93.isSelected()==false) {
+                b93.setSelected(true);
+                b93.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b93.isSelected()==true){
+                b93.setSelected(false);
+                b93.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b94){
+            if(b94.isSelected()==false) {
+                b94.setSelected(true);
+                b94.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b94.isSelected()==true){
+                b94.setSelected(false);
+                b94.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b95){
+            if(b95.isSelected()==false) {
+                b95.setSelected(true);
+                b95.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b95.isSelected()==true){
+                b95.setSelected(false);
+                b95.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b101){
+            if(b101.isSelected()==false) {
+                b101.setSelected(true);
+                b101.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b101.isSelected()==true){
+                b101.setSelected(false);
+                b101.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b102){
+            if(b102.isSelected()==false) {
+                b102.setSelected(true);
+                b102.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b102.isSelected()==true){
+                b102.setSelected(false);
+                b102.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b103){
+            if(b103.isSelected()==false) {
+                b103.setSelected(true);
+                b103.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b103.isSelected()==true){
+                b103.setSelected(false);
+                b103.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b104){
+            if(b104.isSelected()==false) {
+                b104.setSelected(true);
+                b104.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b104.isSelected()==true){
+                b104.setSelected(false);
+                b104.getBackground().clearColorFilter();
+            }
+        }
+        else if(view==b105){
+            if(b105.isSelected()==false) {
+                b105.setSelected(true);
+                b105.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            }
+            else if(b105.isSelected()==true){
+                b105.setSelected(false);
+                b105.getBackground().clearColorFilter();
+            }
+        }
+
 
     }
 
