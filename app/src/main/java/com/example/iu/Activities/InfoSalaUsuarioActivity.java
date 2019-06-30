@@ -1210,7 +1210,6 @@ public class InfoSalaUsuarioActivity extends AppCompatActivity {
     }
 
     public void home(View view){
-        System.out.println(usuario.getNombre());
         Intent UsuarioActivity = new Intent(this, UsuarioActivity.class);
         UsuarioActivity.putExtra("usuario_entidad", usuario);
         startActivity(UsuarioActivity);

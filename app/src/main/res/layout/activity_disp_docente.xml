@@ -26,13 +26,14 @@
 
     <EditText
         android:id="@+id/DispDocenteActivity_capacidad"
-        android:layout_width="0dp"
-        android:layout_height="27dp"
+        android:layout_width="74dp"
+        android:layout_height="38dp"
         android:layout_marginTop="43dp"
         android:layout_marginEnd="170dp"
         android:layout_marginBottom="46dp"
         android:ems="10"
         android:inputType="number"
+        android:text="0"
         app:layout_constraintBottom_toTopOf="@+id/DispDocenteActivity_motivos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView"

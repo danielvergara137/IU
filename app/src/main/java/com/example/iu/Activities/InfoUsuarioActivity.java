@@ -42,7 +42,6 @@ public class InfoUsuarioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_info_usuario);
         getSupportActionBar().hide();
         usuario =(Usuario)getIntent().getSerializableExtra("usuario_entidad");
-        System.out.println("nombre:   " + usuario.getNombre());
         expLV = (ExpandableListView) findViewById(R.id.expLV);
         listCategoria = new ArrayList<>();
         mapChild = new HashMap<>();

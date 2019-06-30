@@ -11,7 +11,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
             "nombre text, password text, tipo text)";
     private static final String CREATE_TABLE_SALA= "CREATE TABLE sala(nombre text PRIMARY KEY, " +
             "facultad text, capacidad int, horario text)";
-    private static final String CREATE_TABLE_RESERVA= "CREATE TABLE reserva(id int PRIMARY KEY, " +
+    private static final String CREATE_TABLE_RESERVA= "CREATE TABLE reserva(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
             "docente text, sala text, ramo text, motivo text, horario text, estado text)";
 
 
