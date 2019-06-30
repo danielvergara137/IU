@@ -97,13 +97,14 @@ public class InfoSalaDocenteActivity extends AppCompatActivity {
     private Button b103;
     private Button b104;
     private Button b105;
-
+    private Button reservar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_sala_docente);
         getSupportActionBar().hide();
+
         usuario =(Usuario)getIntent().getSerializableExtra("usuario_entidad");
         backButton = (ImageButton)findViewById(R.id.info_sala_button_back);
         nombre = (String)getIntent().getSerializableExtra("sala");
@@ -115,6 +116,7 @@ public class InfoSalaDocenteActivity extends AppCompatActivity {
         vistaramo = (TextView)findViewById(R.id.InfoSalaDocenteActivity_ramo);
         vistaprofe = (TextView)findViewById(R.id.InfoSalaDocenteActivity_profe);
         vistacorreo = (TextView)findViewById(R.id.InfoSalaDocenteActivity_correo);
+        reservar = (Button)findViewById(R.id.InfoSalaDocenteActivity_botonreservar);
         vistaramo.setVisibility(View.INVISIBLE);
         vistaprofe.setVisibility(View.INVISIBLE);
         vistacorreo.setVisibility(View.INVISIBLE);
@@ -1195,7 +1197,6 @@ public class InfoSalaDocenteActivity extends AppCompatActivity {
     }
 
     public Reserva buscar(int hora){
-        System.out.println(reservas.size());
         for(int i=0; i < reservas.size(); i++){
             Reserva reserva = reservas.get(i);
             String horasreserva = reserva.getHorario();
@@ -1205,15 +1206,22 @@ public class InfoSalaDocenteActivity extends AppCompatActivity {
         }
         return null;
     }
+
     public void back(View view){
         super.onBackPressed();
     }
 
     public void home(View view){
-        System.out.println(usuario.getNombre());
         Intent DocenteActivity = new Intent(this, DocenteActivity.class);
         DocenteActivity.putExtra("usuario_entidad", usuario);
         startActivity(DocenteActivity);
+    }
+
+    public void reservar(View view){
+        Intent ReservarActivity = new Intent(this, InfoSalaReservaActivity.class);
+        ReservarActivity.putExtra("usuario_entidad", usuario);
+        ReservarActivity.putExtra("sala", sala);
+        startActivity(ReservarActivity);
     }
 }
 
