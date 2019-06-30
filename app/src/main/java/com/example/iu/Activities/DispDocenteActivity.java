@@ -936,7 +936,6 @@ public class DispDocenteActivity extends AppCompatActivity {
             sb.setCharAt(49, 'x');
             horasreserva = sb.toString();
         }
-
         return horasreserva;
     }
 
