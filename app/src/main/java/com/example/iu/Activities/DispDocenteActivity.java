@@ -181,27 +181,37 @@ public class DispDocenteActivity extends AppCompatActivity {
 
     public void marcar(View view){
         if(view==b11){
-            System.out.println(b11.isPressed());
             if(b11.isSelected()==false) {
-                System.out.println(b11.isSelected());
                 b11.setSelected(true);
-                view.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b11.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
             }
             else if(b11.isSelected()==true){
                 b11.setSelected(false);
-                view.getBackground().setColorFilter(0x33FFFFFF, PorterDuff.Mode.MULTIPLY);
+                b11.getBackground().clearColorFilter();
             }
         }
 
     }
 
+    public String horarioreserva(){
+        String horasreserva = "00000000000000000000000000000000000000000000000000";
+        if(b11.isSelected()){
+            StringBuilder sb = new StringBuilder(horasreserva);
+            sb.setCharAt(0, 'x');
+            horasreserva = sb.toString();
+        }
+        return horasreserva;
+    }
+
     public void buscar(View view){
         if(view==buscar){
+            horario = horarioreserva();
             Intent DispResultadosDocenteActivity = new Intent(this, DispResultadosDocenteActivity.class);
             DispResultadosDocenteActivity.putExtra("usuario", usuario);
             DispResultadosDocenteActivity.putExtra("capacidad", cap);
             DispResultadosDocenteActivity.putExtra("motivo", spinnermotivo.getSelectedItem().toString());
-            DispResultadosDocenteActivity.putExtra("horario", spinnerramo.getSelectedItem().toString());
+            DispResultadosDocenteActivity.putExtra("ramo", spinnerramo.getSelectedItem().toString());
+            DispResultadosDocenteActivity.putExtra("horario", horario);
             startActivity(DispResultadosDocenteActivity);
         }
     }
