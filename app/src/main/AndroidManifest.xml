@@ -15,6 +15,7 @@
         <activity android:name=".Activities.SolsActivity" />
         <activity android:name=".Activities.AdminActivity" />
         <activity android:name=".Activities.DispDocenteActivity" />
+        <activity android:name=".Activities.DispResultadosDocenteActivity" />
         <activity android:name=".Activities.InfoDocenteActivity" />
         <activity android:name=".Activities.InfoSalaUsuarioActivity" />
         <activity android:name=".Activities.InfoUsuarioActivity" />

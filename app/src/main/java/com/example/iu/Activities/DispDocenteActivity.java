@@ -87,7 +87,7 @@ public class DispDocenteActivity extends AppCompatActivity {
     private Button b104;
     private Button b105;
     private String motivo;
-    private String cap;
+    private int cap;
     private String horario;
 
     @Override
@@ -942,6 +942,7 @@ public class DispDocenteActivity extends AppCompatActivity {
     public void buscar(View view){
         if(view==buscar){
             horario = horarioreserva();
+            cap = Integer.parseInt(capacidad.getText().toString());
             Intent DispResultadosDocenteActivity = new Intent(this, DispResultadosDocenteActivity.class);
             DispResultadosDocenteActivity.putExtra("usuario", usuario);
             DispResultadosDocenteActivity.putExtra("capacidad", cap);
