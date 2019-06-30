@@ -90,10 +90,24 @@ public class ExpLVAdapter extends BaseExpandableListAdapter {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context,InfoSalaUsuarioActivity.class);
-                intent.putExtra("sala", item);
-                intent.putExtra("usuario_entidad", usuario);
-                context.startActivity(intent);
+                if (usuario.getTipo().equals("alumno")) {
+                    Intent intent = new Intent(context,InfoSalaUsuarioActivity.class);
+                    intent.putExtra("sala", item);
+                    intent.putExtra("usuario_entidad", usuario);
+                    context.startActivity(intent);
+                }
+                else if (usuario.getTipo().equals("docente")){
+                    Intent intent = new Intent(context,InfoSalaDocenteActivity.class);
+                    intent.putExtra("sala", item);
+                    intent.putExtra("usuario_entidad", usuario);
+                    context.startActivity(intent);
+                }
+                else if (usuario.getTipo().equals("admin")){
+                    Intent intent = new Intent(context,InfoSalaUsuarioActivity.class);
+                    intent.putExtra("sala", item);
+                    intent.putExtra("usuario_entidad", usuario);
+                    context.startActivity(intent);
+                }
             }
         });
         return view;
