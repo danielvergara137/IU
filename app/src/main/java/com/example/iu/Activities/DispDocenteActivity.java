@@ -688,254 +688,255 @@ public class DispDocenteActivity extends AppCompatActivity {
         String horasreserva = "00000000000000000000000000000000000000000000000000";
         if(b11.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(0, 'x');
+            sb.setCharAt(0, '1');
             horasreserva = sb.toString();
         }
         else if(b12.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(1, 'x');
+            sb.setCharAt(1, '1');
             horasreserva = sb.toString();
         }
         else if(b13.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(2, 'x');
+            sb.setCharAt(2, '1');
             horasreserva = sb.toString();
         }
         else if(b14.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(3, 'x');
+            sb.setCharAt(3, '1');
             horasreserva = sb.toString();
         }
         else if(b15.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(4, 'x');
+            sb.setCharAt(4, '1');
             horasreserva = sb.toString();
         }
         else if(b21.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(5, 'x');
+            sb.setCharAt(5, '1');
             horasreserva = sb.toString();
         }
         else if(b22.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(6, 'x');
+            sb.setCharAt(6, '1');
             horasreserva = sb.toString();
         }
         else if(b23.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(7, 'x');
+            sb.setCharAt(7, '1');
             horasreserva = sb.toString();
         }
         else if(b24.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(8, 'x');
+            sb.setCharAt(8, '1');
             horasreserva = sb.toString();
         }
         else if(b25.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(9, 'x');
+            sb.setCharAt(9, '1');
             horasreserva = sb.toString();
         }
         else if(b31.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(10, 'x');
+            sb.setCharAt(10, '1');
             horasreserva = sb.toString();
         }
         else if(b32.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(11, 'x');
+            sb.setCharAt(11, '1');
             horasreserva = sb.toString();
         }
         else if(b33.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(12, 'x');
+            sb.setCharAt(12, '1');
             horasreserva = sb.toString();
         }
         else if(b34.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(13, 'x');
+            sb.setCharAt(13, '1');
             horasreserva = sb.toString();
         }
         else if(b35.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(14, 'x');
+            sb.setCharAt(14, '1');
             horasreserva = sb.toString();
         }
         else if(b41.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(15, 'x');
+            sb.setCharAt(15, '1');
             horasreserva = sb.toString();
         }
         else if(b42.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(16, 'x');
+            sb.setCharAt(16, '1');
             horasreserva = sb.toString();
         }
         else if(b43.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(17, 'x');
+            sb.setCharAt(17, '1');
             horasreserva = sb.toString();
         }
         else if(b44.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(18, 'x');
+            sb.setCharAt(18, '1');
             horasreserva = sb.toString();
         }
         else if(b45.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(19, 'x');
+            sb.setCharAt(19, '1');
             horasreserva = sb.toString();
         }
         else if(b51.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(20, 'x');
+            sb.setCharAt(20, '1');
             horasreserva = sb.toString();
         }
         else if(b52.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(21, 'x');
+            sb.setCharAt(21, '1');
             horasreserva = sb.toString();
         }
         else if(b53.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(22, 'x');
+            sb.setCharAt(22, '1');
             horasreserva = sb.toString();
         }
         else if(b54.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(23, 'x');
+            sb.setCharAt(23, '1');
             horasreserva = sb.toString();
         }
         else if(b55.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(24, 'x');
+            sb.setCharAt(24, '1');
             horasreserva = sb.toString();
         }
         else if(b61.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(25, 'x');
+            sb.setCharAt(25, '1');
             horasreserva = sb.toString();
         }
         else if(b62.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(26, 'x');
+            sb.setCharAt(26, '1');
             horasreserva = sb.toString();
         }
         else if(b63.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(27, 'x');
+            sb.setCharAt(27, '1');
             horasreserva = sb.toString();
         }
         else if(b64.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(28, 'x');
+            sb.setCharAt(28, '1');
             horasreserva = sb.toString();
         }
         else if(b65.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(29, 'x');
+            sb.setCharAt(29, '1');
             horasreserva = sb.toString();
         }
         else if(b71.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(30, 'x');
+            sb.setCharAt(30, '1');
             horasreserva = sb.toString();
         }
         else if(b72.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(31, 'x');
+            sb.setCharAt(31, '1');
             horasreserva = sb.toString();
         }
         else if(b73.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(32, 'x');
+            sb.setCharAt(32, '1');
             horasreserva = sb.toString();
         }
         else if(b74.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(33, 'x');
+            sb.setCharAt(33, '1');
             horasreserva = sb.toString();
         }
         else if(b75.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(34, 'x');
+            sb.setCharAt(34, '1');
             horasreserva = sb.toString();
         }
         else if(b81.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(35, 'x');
+            sb.setCharAt(35, '1');
             horasreserva = sb.toString();
         }
         else if(b82.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(36, 'x');
+            sb.setCharAt(36, '1');
             horasreserva = sb.toString();
         }
         else if(b83.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(37, 'x');
+            sb.setCharAt(37, '1');
             horasreserva = sb.toString();
         }
         else if(b84.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(38, 'x');
+            sb.setCharAt(38, '1');
             horasreserva = sb.toString();
         }
         else if(b85.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(39, 'x');
+            sb.setCharAt(39, '1');
             horasreserva = sb.toString();
         }
         else if(b91.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(40, 'x');
+            sb.setCharAt(40, '1');
             horasreserva = sb.toString();
         }
         else if(b92.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(41, 'x');
+            sb.setCharAt(41, '1');
             horasreserva = sb.toString();
         }
         else if(b93.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(42, 'x');
+            sb.setCharAt(42, '1');
             horasreserva = sb.toString();
         }
         else if(b94.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(43, 'x');
+            sb.setCharAt(43, '1');
             horasreserva = sb.toString();
         }
         else if(b95.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(44, 'x');
+            sb.setCharAt(44, '1');
             horasreserva = sb.toString();
         }
         else if(b101.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(45, 'x');
+            sb.setCharAt(45, '1');
             horasreserva = sb.toString();
         }
         else if(b102.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(46, 'x');
+            sb.setCharAt(46, '1');
             horasreserva = sb.toString();
         }
         else if(b103.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(47, 'x');
+            sb.setCharAt(47, '1');
             horasreserva = sb.toString();
         }
         else if(b104.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(48, 'x');
+            sb.setCharAt(48, '1');
             horasreserva = sb.toString();
         }
         else if(b105.isSelected()){
             StringBuilder sb = new StringBuilder(horasreserva);
-            sb.setCharAt(49, 'x');
+            sb.setCharAt(49, '1');
             horasreserva = sb.toString();
         }
+
         return horasreserva;
     }
 
