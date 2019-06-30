@@ -189,7 +189,7 @@ public class DispDocenteActivity extends AppCompatActivity {
             }
             else if(b11.isSelected()==true){
                 b11.setSelected(false);
-                view.getBackground().setColorFilter(0x00000000, PorterDuff.Mode.MULTIPLY);
+                view.getBackground().setColorFilter(0x33FFFFFF, PorterDuff.Mode.MULTIPLY);
             }
         }
 
