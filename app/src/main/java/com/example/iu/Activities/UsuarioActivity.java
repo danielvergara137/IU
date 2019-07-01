@@ -40,6 +40,10 @@ public class UsuarioActivity extends AppCompatActivity implements ZXingScannerVi
 
     }
 
+    @Override
+    public void onBackPressed() {
+    }
+
     public void salir(View view){
         Intent MainActivity = new Intent(this, MainActivity.class);
         startActivity(MainActivity);
@@ -70,11 +74,6 @@ public void btnScan(View view){
     @Override
     public void handleResult(Result rawResult) {
         Log.v("HandleResult", rawResult.getText());
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Resultado del Scan");
-        builder.setMessage(rawResult.getText());
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
         Intent intent = new Intent(this, InfoSalaUsuarioActivity.class);
         intent.putExtra("sala", rawResult.getText());
         intent.putExtra("usuario_entidad", usuario);

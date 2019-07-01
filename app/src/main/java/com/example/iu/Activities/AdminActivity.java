@@ -41,6 +41,10 @@ public class AdminActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+    }
+
     public void salir(View view){
         Intent MainActivity = new Intent(this, MainActivity.class);
         startActivity(MainActivity);
