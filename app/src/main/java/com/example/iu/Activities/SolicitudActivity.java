@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.iu.DB.DBQueries;
 import com.example.iu.Entities.Reserva;
@@ -106,7 +107,7 @@ public class SolicitudActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info_sala_usuario);
+        setContentView(R.layout.activity_solicitud);
         getSupportActionBar().hide();
         usuario =(Usuario)getIntent().getSerializableExtra("usuario_entidad");
         reserva =(Reserva)getIntent().getSerializableExtra("reserva");
@@ -1374,10 +1375,19 @@ public class SolicitudActivity extends AppCompatActivity {
     }
 
     public void Aceptar(View view){
+        DBQueries.updateEstadoReserva(reserva.getId(), "aceptada", this);
         DBQueries.updateHorarioSala(horarioReserva, horario, reserva.getSala(), this);
+        Intent SolsActivity = new Intent(this, SolsActivity.class);
+        SolsActivity.putExtra("usuario_entidad", usuario);
+        startActivity(SolsActivity);
+        Toast.makeText(this, "Solicitud de sala aceptada con éxito", Toast.LENGTH_SHORT).show();
     }
 
     public void Rechazar(View view){
         DBQueries.updateEstadoReserva(reserva.getId(), "rechazada", this);
+        Intent SolsActivity = new Intent(this, SolsActivity.class);
+        SolsActivity.putExtra("usuario_entidad", usuario);
+        startActivity(SolsActivity);
+        Toast.makeText(this, "Solicitud de sala rechazada con éxito", Toast.LENGTH_SHORT).show();
     }
 }

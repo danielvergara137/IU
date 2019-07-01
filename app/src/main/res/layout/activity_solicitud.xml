@@ -8,62 +8,64 @@
 
     <ImageButton
         android:id="@+id/info_sala_button_back"
-        android:layout_width="50dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="16dp"
         android:onClick="back"
         android:src="@drawable/ic_action_name"
+        app:layout_constraintBottom_toBottomOf="@+id/InfoSalaUsuarioActivity_sala"
+        app:layout_constraintEnd_toStartOf="@+id/InfoSalaUsuarioActivity_sala"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/home_button_info_sala_usuario" />
 
     <ImageButton
         android:id="@+id/home_button_info_sala_usuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="181dp"
         android:onClick="home"
         android:src="@drawable/home_image"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/info_sala_button_back"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/InfoSalaUsuarioActivity_capacidad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="18dp"
         android:text="Capacidad"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/info_sala_button_back"
+        app:layout_constraintTop_toBottomOf="@+id/info_sala_button_back" />
 
     <TextView
         android:id="@+id/InfoSalaUsuarioActivity_sala"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="183dp"
         android:text="Sala"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/home_button_info_sala_usuario" />
+        app:layout_constraintStart_toEndOf="@+id/info_sala_button_back"
+        app:layout_constraintTop_toBottomOf="@+id/home_button_info_sala_usuario" />
 
     <TableLayout
         android:id="@+id/tableLayout2"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="101dp"
+        android:layout_marginBottom="105dp"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/home_button_info_sala_usuario">
 
         <TableRow
             android:layout_width="wrap_content"
@@ -531,14 +533,11 @@
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginStart="40dp"
         android:backgroundTint="#8BC34A"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintBottom_toTopOf="@+id/rechazarSol"
+        app:layout_constraintStart_toEndOf="@+id/rechazarSol">
 
         <TextView
             android:id="@+id/InfoSalaUsuarioActivity_ramo"
@@ -567,24 +566,26 @@
         android:id="@+id/aceptarSol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="46dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="32dp"
         android:onClick="Aceptar"
         android:text="Aceptar"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout" />
 
     <Button
         android:id="@+id/rechazarSol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="32dp"
         android:onClick="Rechazar"
         android:text="Rechazar"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
