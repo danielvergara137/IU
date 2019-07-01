@@ -106,7 +106,7 @@ public class SolicitudActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info_sala_usuario);
+        setContentView(R.layout.activity_solicitud);
         getSupportActionBar().hide();
         usuario =(Usuario)getIntent().getSerializableExtra("usuario_entidad");
         reserva =(Reserva)getIntent().getSerializableExtra("reserva");
@@ -116,6 +116,8 @@ public class SolicitudActivity extends AppCompatActivity {
         horario = sala.getHorario();
         botonAceptar = (Button)findViewById(R.id.aceptarSol);
         botonRechazar = (Button)findViewById(R.id.rechazarSol);
+        botonRechazar.setText("Rechazar");
+        botonAceptar.setText("Aceptar");
         reservas = DBQueries.getReservas(nombre, this);
         vistanombre = (TextView)findViewById(R.id.InfoSalaUsuarioActivity_sala);
         vistacapacidad = (TextView)findViewById(R.id.InfoSalaUsuarioActivity_capacidad);
