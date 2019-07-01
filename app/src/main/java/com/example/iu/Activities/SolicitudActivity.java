@@ -1367,7 +1367,9 @@ public class SolicitudActivity extends AppCompatActivity {
         return null;
     }
     public void back(View view){
-        super.onBackPressed();
+        Intent AdminActivity = new Intent(this, AdminActivity.class);
+        AdminActivity.putExtra("usuario_entidad", usuario);
+        startActivity(AdminActivity);
     }
 
     public void home(View view){
