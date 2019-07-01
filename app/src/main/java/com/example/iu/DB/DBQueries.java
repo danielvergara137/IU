@@ -128,7 +128,7 @@ public class DBQueries {
     public static boolean reservar(String docente, String sala, String ramo, String motivo, String horario, Context context){
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(context, "db", null, 1);
         SQLiteDatabase db = admin.getWritableDatabase();
-        String query = "INSERT INTO reserva (docente, sala, ramo, motivo, horario, estado) VALUES ('" + docente + "', '" + sala + "', '" + ramo + "', '" + motivo + "', '" + horario + "', 'aceptada')";
+        String query = "INSERT INTO reserva (docente, sala, ramo, motivo, horario, estado) VALUES ('" + docente + "', '" + sala + "', '" + ramo + "', '" + motivo + "', '" + horario + "', 'pendiente')";
         db.execSQL(query);
         db.close();
         return true;
