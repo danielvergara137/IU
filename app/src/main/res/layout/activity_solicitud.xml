@@ -24,20 +24,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="22dp"
         android:onClick="home"
         android:src="@drawable/home_image"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayoutreserva"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/InfoSalaUsuarioActivity_capacidad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="100dp"
-        android:text="Capacidad"
-        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -526,6 +517,42 @@
                 android:onClick="mostrarInfo" />
         </TableRow>
     </TableLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutreserva"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="610dp"
+        android:backgroundTint="#8BC34A"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/InfoSalaUsuarioActivity_sala"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_button_info_sala_usuario">
+
+        <TextView
+            android:id="@+id/reservadocente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/InfoSalaUsuarioActivity_capacidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Capacidad"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/reservamotivo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout"
