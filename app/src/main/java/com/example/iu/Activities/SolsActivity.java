@@ -47,6 +47,12 @@ public class SolsActivity extends AppCompatActivity {
         super.onBackPressed();
     }
 
+    public void home(View view){
+        Intent AdminActivity = new Intent(this, AdminActivity.class);
+        AdminActivity.putExtra("usuario_entidad", usuario);
+        startActivity(AdminActivity);
+    }
+
     public void cargarDatos(){
         ArrayList<Integer> Solicitudes = new ArrayList<>();
         listCategoria.add("Solicitudes");
