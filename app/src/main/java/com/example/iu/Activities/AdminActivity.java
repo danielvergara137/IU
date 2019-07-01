@@ -4,17 +4,26 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.iu.DB.DBQueries;
+import com.example.iu.Entities.Reserva;
 import com.example.iu.Entities.Usuario;
 import com.example.iu.R;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class AdminActivity extends AppCompatActivity {
 
     private ImageView foto;
     private TextView nombre;
     private TextView tipo;
+
     private Usuario usuario;
 
     @Override
@@ -22,9 +31,7 @@ public class AdminActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
         getSupportActionBar().hide();
-
         usuario =(Usuario)getIntent().getSerializableExtra("usuario_entidad");
-
         foto=(ImageView)findViewById(R.id.AdminActivity_foto);
         nombre=(TextView)findViewById(R.id.AdminActivity_nombre);
         tipo=(TextView)findViewById(R.id.AdminActivity_tipo);
@@ -38,6 +45,8 @@ public class AdminActivity extends AppCompatActivity {
         Intent MainActivity = new Intent(this, MainActivity.class);
         startActivity(MainActivity);
     }
+
+
 
     /*
     public void info(View view){

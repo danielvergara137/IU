@@ -91,6 +91,27 @@ public class DBQueries {
         return reservas;
     }
 
+    public static List<Reserva> getReservasPendientes(Context context){
+        List<Reserva> reservas = new ArrayList<>();
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(context, "db", null, 1);
+        SQLiteDatabase db = admin.getWritableDatabase();
+        String query = "SELECT id, docente, sala, ramo, motivo, horario, estado FROM reserva WHERE estado = 'pendiente'";
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.moveToFirst()) {
+            do {
+                reservas.add(new Reserva(cursor.getInt(0), //id
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3),
+                        cursor.getString(4),
+                        cursor.getString(5),
+                        cursor.getString(6)));
+            } while (cursor.moveToNext());
+        }
+        db.close();
+        return reservas;
+    }
+
     public static List<Sala> getSalas(String facultad, Context context ){
         List<Sala> salas = new ArrayList<>();
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(context, "db", null, 1);
