@@ -155,4 +155,18 @@ public class DBQueries {
         return true;
     }
 
+    public static Reserva getReserva(int id, Context context){
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(context, "db", null, 1);
+        SQLiteDatabase db = admin.getWritableDatabase();
+        String query = "SELECT id, docente, sala, ramo, motivo, horario, estado FROM reserva WHERE id = '" + id +"'";
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.moveToFirst()){
+            Reserva reserva = new Reserva(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6));
+            db.close();
+            return reserva;
+        }
+        db.close();
+        return null;
+    }
+
 }
