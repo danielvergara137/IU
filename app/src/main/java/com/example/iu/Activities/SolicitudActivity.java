@@ -102,6 +102,8 @@ public class SolicitudActivity extends AppCompatActivity {
     private String horarioReserva;
     private Button botonAceptar;
     private Button botonRechazar;
+    private TextView motivo;
+    private TextView docente;
 
 
     @Override
@@ -115,6 +117,10 @@ public class SolicitudActivity extends AppCompatActivity {
         sala = DBQueries.getSala(reserva.getSala(),this);
         horarioReserva = reserva.getHorario();
         horario = sala.getHorario();
+        motivo = (TextView)findViewById(R.id.textView7);
+        docente = (TextView)findViewById(R.id.textView8);
+        motivo.setText("Motivo: " + reserva.getMotivo());
+        docente.setText("Docente: " + reserva.getDocente());
         botonAceptar = (Button)findViewById(R.id.aceptarSol);
         botonRechazar = (Button)findViewById(R.id.rechazarSol);
         botonRechazar.setText("Rechazar");
