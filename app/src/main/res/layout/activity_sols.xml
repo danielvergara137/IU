@@ -7,7 +7,7 @@
     tools:context=".Activities.SolsActivity">
 
     <ImageButton
-        android:id="@+id/info_usuario_button_back"
+        android:id="@+id/SolsActivity_button_back"
         android:layout_width="53dp"
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
