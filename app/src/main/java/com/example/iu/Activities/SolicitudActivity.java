@@ -117,6 +117,8 @@ public class SolicitudActivity extends AppCompatActivity {
         horario = sala.getHorario();
         botonAceptar = (Button)findViewById(R.id.aceptarSol);
         botonRechazar = (Button)findViewById(R.id.rechazarSol);
+        botonRechazar.setText("Rechazar");
+        botonAceptar.setText("Aceptar");
         reservas = DBQueries.getReservas(nombre, this);
         vistanombre = (TextView)findViewById(R.id.InfoSalaUsuarioActivity_sala);
         vistacapacidad = (TextView)findViewById(R.id.InfoSalaUsuarioActivity_capacidad);
