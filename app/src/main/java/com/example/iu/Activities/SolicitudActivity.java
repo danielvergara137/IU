@@ -117,8 +117,8 @@ public class SolicitudActivity extends AppCompatActivity {
         sala = DBQueries.getSala(reserva.getSala(),this);
         horarioReserva = reserva.getHorario();
         horario = sala.getHorario();
-        motivo = (TextView)findViewById(R.id.textView7);
-        docente = (TextView)findViewById(R.id.textView8);
+        motivo = (TextView)findViewById(R.id.reservamotivo);
+        docente = (TextView)findViewById(R.id.reservadocente);
         motivo.setText("Motivo: " + reserva.getMotivo());
         docente.setText("Docente: " + reserva.getDocente());
         botonAceptar = (Button)findViewById(R.id.aceptarSol);
