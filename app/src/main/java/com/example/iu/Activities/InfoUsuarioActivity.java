@@ -70,5 +70,14 @@ public class InfoUsuarioActivity extends AppCompatActivity {
         adapter = new ExpLVAdapter(listCategoria, mapChild, this, usuario);
         expLV.setAdapter(adapter);
     }
+    public void back(View view){
+        super.onBackPressed();
+    }
+
+    public void home(View view){
+        Intent UsuarioActivity = new Intent(this, UsuarioActivity.class);
+        UsuarioActivity.putExtra("usuario_entidad", usuario);
+        startActivity(UsuarioActivity);
+    }
 
 }

@@ -28,7 +28,7 @@ public class DocenteActivity extends AppCompatActivity {
         foto=(ImageView)findViewById(R.id.DocenteActivity_foto);
         nombre=(TextView)findViewById(R.id.DocenteActivity_nombre);
         tipo=(TextView)findViewById(R.id.DocenteActivity_tipo);
-        foto.setImageResource(R.drawable.perfil);
+        foto.setImageResource(R.drawable.profe);
         nombre.setText(usuario.getNombre());
         tipo.setText("Docente");
 

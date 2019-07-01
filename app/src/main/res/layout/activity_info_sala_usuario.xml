@@ -10,24 +10,22 @@
         android:id="@+id/info_sala_button_back"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginBottom="51dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:onClick="back"
         android:src="@drawable/ic_action_name"
-        app:layout_constraintBottom_toTopOf="@+id/InfoSalaUsuarioActivity_sala"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/home_button_info_sala_usuario"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginBottom="542dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:onClick="home"
         android:src="@drawable/home_image"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,35 +34,36 @@
         android:id="@+id/InfoSalaUsuarioActivity_capacidad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="100dp"
         android:text="Capacidad"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/info_sala_button_back" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/InfoSalaUsuarioActivity_sala"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginBottom="540dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="8dp"
         android:text="Sala"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/home_button_info_sala_usuario" />
 
     <TableLayout
         android:id="@+id/tableLayout2"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="130dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="150dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
             android:layout_width="wrap_content"
@@ -534,34 +533,33 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="80dp"
         android:backgroundTint="#8BC34A"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_button_info_sala_usuario">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/InfoSalaUsuarioActivity_ramo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
-            android:textSize="20dp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/InfoSalaUsuarioActivity_profe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
-            android:textSize="20dp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/InfoSalaUsuarioActivity_correo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
-            android:textSize="20dp" />
+            android:textSize="14sp" />
 
     </LinearLayout>
 

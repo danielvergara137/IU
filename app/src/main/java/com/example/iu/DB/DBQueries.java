@@ -27,8 +27,8 @@ public class DBQueries {
             if (cursor.getString(0).compareTo(password)==0) {
                 db.close();
                 return true;
-            } else Toast.makeText(context, "Contraseña Incorrecta", Toast.LENGTH_SHORT).show();
-        } else Toast.makeText(context, "No se encuentra registrado", Toast.LENGTH_SHORT).show();
+            }
+        }
         db.close();
         return false;
     }

@@ -35,7 +35,7 @@ public class UsuarioActivity extends AppCompatActivity implements ZXingScannerVi
         foto=(ImageView)findViewById(R.id.UsuarioActivity_foto);
         nombre=(TextView)findViewById(R.id.UsuarioActivity_nombre);
         tipo=(TextView)findViewById(R.id.UsuarioActivity_tipo);
-        foto.setImageResource(R.drawable.perfil);
+        foto.setImageResource(R.drawable.estudiante);
         nombre.setText(usuario.getNombre());
 
     }
