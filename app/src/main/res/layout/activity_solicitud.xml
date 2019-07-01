@@ -24,10 +24,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="22dp"
         android:onClick="home"
         android:src="@drawable/home_image"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayoutreserva"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -43,14 +41,14 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/home_button_info_sala_usuario" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
         android:id="@+id/tableLayout2"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="150dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -522,15 +520,12 @@
         android:id="@+id/linearLayoutreserva"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="46dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginBottom="610dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="80dp"
         android:backgroundTint="#8BC34A"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/InfoSalaUsuarioActivity_sala"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_button_info_sala_usuario">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/reservadocente"
@@ -560,7 +555,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="8dp"
         android:backgroundTint="#8BC34A"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -594,24 +589,24 @@
         android:id="@+id/aceptarSol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="46dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="24dp"
         android:onClick="Aceptar"
         android:text="Aceptar"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/rechazarSol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="24dp"
         android:onClick="Rechazar"
         android:text="Rechazar"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
