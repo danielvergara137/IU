@@ -15,7 +15,6 @@
         android:layout_marginEnd="8dp"
         android:onClick="back"
         android:src="@drawable/ic_action_name"
-        app:layout_constraintEnd_toStartOf="@+id/InfoSalaUsuarioActivity_sala"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -339,7 +339,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         if(view==b11 && horario.charAt(0)=='0'){
             if(b11.isSelected()==false) {
                 b11.setSelected(true);
-                b11.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b11.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b11.isSelected()==true){
                 b11.setSelected(false);
@@ -349,7 +349,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b12 && horario.charAt(1)=='0'){
             if(b12.isSelected()==false) {
                 b12.setSelected(true);
-                b12.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b12.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b12.isSelected()==true){
                 b12.setSelected(false);
@@ -359,7 +359,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b13 && horario.charAt(2)=='0'){
             if(b13.isSelected()==false) {
                 b13.setSelected(true);
-                b13.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b13.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b13.isSelected()==true){
                 b13.setSelected(false);
@@ -369,7 +369,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b14 && horario.charAt(3)=='0'){
             if(b14.isSelected()==false) {
                 b14.setSelected(true);
-                b14.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b14.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b14.isSelected()==true){
                 b14.setSelected(false);
@@ -379,7 +379,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b15 && horario.charAt(4)=='0'){
             if(b15.isSelected()==false) {
                 b15.setSelected(true);
-                b15.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b15.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b15.isSelected()==true){
                 b15.setSelected(false);
@@ -389,7 +389,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b21 && horario.charAt(5)=='0'){
             if(b21.isSelected()==false) {
                 b21.setSelected(true);
-                b21.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b21.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b21.isSelected()==true){
                 b21.setSelected(false);
@@ -399,7 +399,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b22 && horario.charAt(6)=='0'){
             if(b22.isSelected()==false) {
                 b22.setSelected(true);
-                b22.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b22.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b22.isSelected()==true){
                 b22.setSelected(false);
@@ -409,7 +409,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b23 && horario.charAt(7)=='0'){
             if(b23.isSelected()==false) {
                 b23.setSelected(true);
-                b23.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b23.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b23.isSelected()==true){
                 b23.setSelected(false);
@@ -419,7 +419,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b24 && horario.charAt(8)=='0'){
             if(b24.isSelected()==false) {
                 b24.setSelected(true);
-                b24.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b24.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b24.isSelected()==true){
                 b24.setSelected(false);
@@ -429,7 +429,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b25 && horario.charAt(9)=='0'){
             if(b25.isSelected()==false) {
                 b25.setSelected(true);
-                b25.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b25.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b25.isSelected()==true){
                 b25.setSelected(false);
@@ -439,7 +439,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b31 && horario.charAt(10)=='0'){
             if(b31.isSelected()==false) {
                 b31.setSelected(true);
-                b31.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b31.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b31.isSelected()==true){
                 b31.setSelected(false);
@@ -449,7 +449,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b32 && horario.charAt(11)=='0'){
             if(b32.isSelected()==false) {
                 b32.setSelected(true);
-                b32.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b32.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b32.isSelected()==true){
                 b32.setSelected(false);
@@ -459,7 +459,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b33 && horario.charAt(12)=='0'){
             if(b33.isSelected()==false) {
                 b33.setSelected(true);
-                b33.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b33.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b33.isSelected()==true){
                 b33.setSelected(false);
@@ -469,7 +469,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b34 && horario.charAt(13)=='0'){
             if(b34.isSelected()==false) {
                 b34.setSelected(true);
-                b34.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b34.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b34.isSelected()==true){
                 b34.setSelected(false);
@@ -479,7 +479,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b35 && horario.charAt(14)=='0'){
             if(b35.isSelected()==false) {
                 b35.setSelected(true);
-                b35.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b35.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b35.isSelected()==true){
                 b35.setSelected(false);
@@ -489,7 +489,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b41 && horario.charAt(15)=='0'){
             if(b41.isSelected()==false) {
                 b41.setSelected(true);
-                b41.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b41.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b41.isSelected()==true){
                 b41.setSelected(false);
@@ -499,7 +499,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b42 && horario.charAt(16)=='0'){
             if(b42.isSelected()==false) {
                 b42.setSelected(true);
-                b42.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b42.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b42.isSelected()==true){
                 b42.setSelected(false);
@@ -509,7 +509,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b43 && horario.charAt(17)=='0'){
             if(b43.isSelected()==false) {
                 b43.setSelected(true);
-                b43.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b43.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b43.isSelected()==true){
                 b43.setSelected(false);
@@ -519,7 +519,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b44 && horario.charAt(18)=='0'){
             if(b44.isSelected()==false) {
                 b44.setSelected(true);
-                b44.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b44.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b44.isSelected()==true){
                 b44.setSelected(false);
@@ -529,7 +529,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b45 && horario.charAt(19)=='0'){
             if(b45.isSelected()==false) {
                 b45.setSelected(true);
-                b45.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b45.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b45.isSelected()==true){
                 b45.setSelected(false);
@@ -539,7 +539,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b51 && horario.charAt(20)=='0'){
             if(b51.isSelected()==false) {
                 b51.setSelected(true);
-                b51.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b51.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b51.isSelected()==true){
                 b51.setSelected(false);
@@ -549,7 +549,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b52 && horario.charAt(21)=='0'){
             if(b52.isSelected()==false) {
                 b52.setSelected(true);
-                b52.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b52.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b52.isSelected()==true){
                 b52.setSelected(false);
@@ -559,7 +559,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b53 && horario.charAt(22)=='0'){
             if(b53.isSelected()==false) {
                 b53.setSelected(true);
-                b53.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b53.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b53.isSelected()==true){
                 b53.setSelected(false);
@@ -569,7 +569,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b54 && horario.charAt(23)=='0'){
             if(b54.isSelected()==false) {
                 b54.setSelected(true);
-                b54.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b54.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b54.isSelected()==true){
                 b54.setSelected(false);
@@ -579,7 +579,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b55 && horario.charAt(24)=='0'){
             if(b55.isSelected()==false) {
                 b55.setSelected(true);
-                b55.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b55.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b55.isSelected()==true){
                 b55.setSelected(false);
@@ -589,7 +589,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b61 && horario.charAt(25)=='0'){
             if(b61.isSelected()==false) {
                 b61.setSelected(true);
-                b61.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b61.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b61.isSelected()==true){
                 b61.setSelected(false);
@@ -599,7 +599,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b62 && horario.charAt(26)=='0'){
             if(b62.isSelected()==false) {
                 b62.setSelected(true);
-                b62.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b62.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b62.isSelected()==true){
                 b62.setSelected(false);
@@ -609,7 +609,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b63 && horario.charAt(27)=='0'){
             if(b63.isSelected()==false) {
                 b63.setSelected(true);
-                b63.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b63.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b63.isSelected()==true){
                 b63.setSelected(false);
@@ -619,7 +619,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b64 && horario.charAt(28)=='0'){
             if(b64.isSelected()==false) {
                 b64.setSelected(true);
-                b64.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b64.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b64.isSelected()==true){
                 b64.setSelected(false);
@@ -629,7 +629,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b65 && horario.charAt(29)=='0'){
             if(b65.isSelected()==false) {
                 b65.setSelected(true);
-                b65.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b65.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b65.isSelected()==true){
                 b65.setSelected(false);
@@ -639,7 +639,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b71 && horario.charAt(30)=='0'){
             if(b71.isSelected()==false) {
                 b71.setSelected(true);
-                b71.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b71.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b71.isSelected()==true){
                 b71.setSelected(false);
@@ -649,7 +649,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b72 && horario.charAt(31)=='0'){
             if(b72.isSelected()==false) {
                 b72.setSelected(true);
-                b72.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b72.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b72.isSelected()==true){
                 b72.setSelected(false);
@@ -659,7 +659,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b73 && horario.charAt(32)=='0'){
             if(b73.isSelected()==false) {
                 b73.setSelected(true);
-                b73.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b73.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b73.isSelected()==true){
                 b73.setSelected(false);
@@ -669,7 +669,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b74 && horario.charAt(33)=='0'){
             if(b74.isSelected()==false) {
                 b74.setSelected(true);
-                b74.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b74.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b74.isSelected()==true){
                 b74.setSelected(false);
@@ -679,7 +679,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b75 && horario.charAt(34)=='0'){
             if(b75.isSelected()==false) {
                 b75.setSelected(true);
-                b75.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b75.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b75.isSelected()==true){
                 b75.setSelected(false);
@@ -689,7 +689,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b81 && horario.charAt(35)=='0'){
             if(b81.isSelected()==false) {
                 b81.setSelected(true);
-                b81.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b81.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b81.isSelected()==true){
                 b81.setSelected(false);
@@ -699,7 +699,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b82 && horario.charAt(36)=='0'){
             if(b82.isSelected()==false) {
                 b82.setSelected(true);
-                b82.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b82.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b82.isSelected()==true){
                 b82.setSelected(false);
@@ -709,7 +709,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b83 && horario.charAt(37)=='0'){
             if(b83.isSelected()==false) {
                 b83.setSelected(true);
-                b83.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b83.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b83.isSelected()==true){
                 b83.setSelected(false);
@@ -719,7 +719,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b84 && horario.charAt(38)=='0'){
             if(b84.isSelected()==false) {
                 b84.setSelected(true);
-                b84.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b84.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b84.isSelected()==true){
                 b84.setSelected(false);
@@ -729,7 +729,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b85 && horario.charAt(39)=='0'){
             if(b85.isSelected()==false) {
                 b85.setSelected(true);
-                b85.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b85.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b85.isSelected()==true){
                 b85.setSelected(false);
@@ -739,7 +739,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b91 && horario.charAt(40)=='0'){
             if(b91.isSelected()==false) {
                 b91.setSelected(true);
-                b91.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b91.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b91.isSelected()==true){
                 b91.setSelected(false);
@@ -749,7 +749,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b92 && horario.charAt(41)=='0'){
             if(b92.isSelected()==false) {
                 b92.setSelected(true);
-                b92.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b92.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b92.isSelected()==true){
                 b92.setSelected(false);
@@ -759,7 +759,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b93 && horario.charAt(42)=='0'){
             if(b93.isSelected()==false) {
                 b93.setSelected(true);
-                b93.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b93.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b93.isSelected()==true){
                 b93.setSelected(false);
@@ -769,7 +769,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b94 && horario.charAt(43)=='0'){
             if(b94.isSelected()==false) {
                 b94.setSelected(true);
-                b94.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b94.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b94.isSelected()==true){
                 b94.setSelected(false);
@@ -779,7 +779,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b95 && horario.charAt(44)=='0'){
             if(b95.isSelected()==false) {
                 b95.setSelected(true);
-                b95.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b95.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b95.isSelected()==true){
                 b95.setSelected(false);
@@ -789,7 +789,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b101 && horario.charAt(45)=='0'){
             if(b101.isSelected()==false) {
                 b101.setSelected(true);
-                b101.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b101.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b101.isSelected()==true){
                 b101.setSelected(false);
@@ -799,7 +799,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b102 && horario.charAt(46)=='0'){
             if(b102.isSelected()==false) {
                 b102.setSelected(true);
-                b102.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b102.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b102.isSelected()==true){
                 b102.setSelected(false);
@@ -809,7 +809,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b103 && horario.charAt(47)=='0'){
             if(b103.isSelected()==false) {
                 b103.setSelected(true);
-                b103.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b103.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b103.isSelected()==true){
                 b103.setSelected(false);
@@ -819,7 +819,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b104 && horario.charAt(48)=='0'){
             if(b104.isSelected()==false) {
                 b104.setSelected(true);
-                b104.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b104.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b104.isSelected()==true){
                 b104.setSelected(false);
@@ -829,7 +829,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
         else if(view==b105 && horario.charAt(49)=='0'){
             if(b105.isSelected()==false) {
                 b105.setSelected(true);
-                b105.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+                b105.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
             }
             else if(b105.isSelected()==true){
                 b105.setSelected(false);
@@ -1106,5 +1106,15 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
                 startActivity(DocenteActivity);
             }
         }
+    }
+
+    public void back(View view){
+        super.onBackPressed();
+    }
+
+    public void home(View view){
+        Intent DocenteActivity = new Intent(this, DocenteActivity.class);
+        DocenteActivity.putExtra("usuario_entidad", usuario);
+        startActivity(DocenteActivity);
     }
 }

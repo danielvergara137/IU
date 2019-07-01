@@ -63,4 +63,14 @@ public class InfoDocenteActivity extends AppCompatActivity {
         expLV.setAdapter(adapter);
     }
 
+    public void back(View view){
+        super.onBackPressed();
+    }
+
+    public void home(View view){
+        Intent DocenteActivity = new Intent(this, DocenteActivity.class);
+        DocenteActivity.putExtra("usuario_entidad", usuario);
+        startActivity(DocenteActivity);
+    }
+
 }
