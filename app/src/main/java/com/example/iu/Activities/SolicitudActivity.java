@@ -192,155 +192,306 @@ public class SolicitudActivity extends AppCompatActivity {
         vistacapacidad.setText("Capacidad: " + String.valueOf(sala.getCapacidad()));
 
         if(horarioReserva.charAt(0)=='1') {
-            b11.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b11.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(1)=='1') {
-            b12.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b12.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(2)=='1') {
-            b13.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b13.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(3)=='1') {
-            b14.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b14.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(4)=='1') {
-            b15.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b15.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(5)=='1') {
-            b21.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b21.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(6)=='1') {
-            b22.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b22.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(7)=='1') {
-            b23.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b23.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(8)=='1') {
-            b24.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b24.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(9)=='1') {
-            b25.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b25.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(10)=='1') {
-            b31.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b31.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(11)=='1') {
-            b32.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b32.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(12)=='1') {
-            b33.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b33.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(13)=='1') {
-            b34.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b34.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(14)=='1') {
-            b35.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b35.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(15)=='1') {
-            b41.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b41.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(16)=='1') {
-            b42.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b42.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(17)=='1') {
-            b43.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b43.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(18)=='1') {
-            b44.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b44.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(19)=='1') {
-            b45.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b45.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(20)=='1') {
-            b51.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b51.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(21)=='1') {
-            b52.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b52.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(22)=='1') {
-            b53.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b53.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(23)=='1') {
-            b54.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b54.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(24)=='1') {
-            b55.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b55.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(25)=='1') {
-            b61.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b61.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(26)=='1') {
-            b62.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b62.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(27)=='1') {
-            b63.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b63.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(28)=='1') {
-            b64.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b64.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(29)=='1') {
-            b65.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b65.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(30)=='1') {
-            b71.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b71.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(31)=='1') {
-            b72.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b72.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(32)=='1') {
-            b73.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b73.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(33)=='1') {
-            b74.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b74.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(34)=='1') {
-            b75.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b75.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(35)=='1') {
-            b81.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b81.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(36)=='1') {
-            b82.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b82.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(37)=='1') {
-            b83.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b83.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(38)=='1') {
-            b84.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b84.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(39)=='1') {
-            b85.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b85.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(40)=='1') {
-            b91.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b91.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(41)=='1') {
-            b92.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b92.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(42)=='1') {
-            b93.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b93.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(43)=='1') {
-            b94.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b94.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(44)=='1') {
-            b95.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b95.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(45)=='1') {
-            b101.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b101.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(46)=='1') {
-            b102.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b102.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(47)=='1') {
-            b103.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b103.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(48)=='1') {
-            b104.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+            b104.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
         }
         if(horarioReserva.charAt(49)=='1') {
             b105.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
         }
+        if(horario.charAt(0)=='1') {
+            b11.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(1)=='1') {
+            b12.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(2)=='1') {
+            b13.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(3)=='1') {
+            b14.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(4)=='1') {
+            b15.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(5)=='1') {
+            b21.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(6)=='1') {
+            b22.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(7)=='1') {
+            b23.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(8)=='1') {
+            b24.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(9)=='1') {
+            b25.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(10)=='1') {
+            b31.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(11)=='1') {
+            b32.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(12)=='1') {
+            b33.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(13)=='1') {
+            b34.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(14)=='1') {
+            b35.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(15)=='1') {
+            b41.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(16)=='1') {
+            b42.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(17)=='1') {
+            b43.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(18)=='1') {
+            b44.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(19)=='1') {
+            b45.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(20)=='1') {
+            b51.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(21)=='1') {
+            b52.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(22)=='1') {
+            b53.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(23)=='1') {
+            b54.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(24)=='1') {
+            b55.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(25)=='1') {
+            b61.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(26)=='1') {
+            b62.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(27)=='1') {
+            b63.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(28)=='1') {
+            b64.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(29)=='1') {
+            b65.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(30)=='1') {
+            b71.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(31)=='1') {
+            b72.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(32)=='1') {
+            b73.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(33)=='1') {
+            b74.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(34)=='1') {
+            b75.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(35)=='1') {
+            b81.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(36)=='1') {
+            b82.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(37)=='1') {
+            b83.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(38)=='1') {
+            b84.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(39)=='1') {
+            b85.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(40)=='1') {
+            b91.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(41)=='1') {
+            b92.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(42)=='1') {
+            b93.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(43)=='1') {
+            b94.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(44)=='1') {
+            b95.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(45)=='1') {
+            b101.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(46)=='1') {
+            b102.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(47)=='1') {
+            b103.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(48)=='1') {
+            b104.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(49)=='1') {
+            b105.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+
     }
 
     public void mostrarInfo(View view){
