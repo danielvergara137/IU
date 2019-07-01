@@ -110,9 +110,7 @@ public class ExpLVAdapterReserva extends BaseExpandableListAdapter {
                 builder.setPositiveButton("Solicitar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         if(DBQueries.reservar(usuario.getUsername(), item, ramo, motivo, horario, context)) {
-                            Sala sala = DBQueries.getSala(item, context);
-                            DBQueries.updateHorarioSala(horario, sala.getHorario(), sala.getNombre(), context);
-                            Toast.makeText(context, "Reserva de sala " + item + " realizada con éxito", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, "Solicitud de sala " + item + " realizada con éxito", Toast.LENGTH_SHORT).show();
                             Intent DocenteActivity = new Intent(context, DocenteActivity.class);
                             DocenteActivity.putExtra("usuario_entidad", usuario);
                             context.startActivity(DocenteActivity);

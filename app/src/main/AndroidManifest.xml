@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.InfoSalaReservaActivity"></activity>
+        <activity android:name=".Activities.InfoSalaReservaActivity" />
         <activity android:name=".Activities.InfoSalaDocenteActivity" />
         <activity android:name=".Activities.SolsActivity" />
         <activity android:name=".Activities.AdminActivity" />

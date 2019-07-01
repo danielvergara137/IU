@@ -1099,8 +1099,7 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
             motivo = spinnermotivo.getSelectedItem().toString();
             ramo = spinnerramo.getSelectedItem().toString();
             if(DBQueries.reservar(usuario.getUsername(),sala.getNombre(),ramo,motivo,horarioreserva,this)){
-                DBQueries.updateHorarioSala(horarioreserva, sala.getHorario(), sala.getNombre(), this);
-                Toast.makeText(this, "Reserva de sala " + sala.getNombre() + " realizada con éxito", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Solicitud de sala " + sala.getNombre() + " realizada con éxito", Toast.LENGTH_SHORT).show();
                 Intent DocenteActivity = new Intent(this, DocenteActivity.class);
                 DocenteActivity.putExtra("usuario_entidad", usuario);
                 startActivity(DocenteActivity);
