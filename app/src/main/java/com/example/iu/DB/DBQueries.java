@@ -27,8 +27,8 @@ public class DBQueries {
             if (cursor.getString(0).compareTo(password)==0) {
                 db.close();
                 return true;
-            } else Toast.makeText(context, "Contraseña Incorrecta", Toast.LENGTH_SHORT).show();
-        } else Toast.makeText(context, "No se encuentra registrado", Toast.LENGTH_SHORT).show();
+            }
+        }
         db.close();
         return false;
     }
@@ -49,8 +49,10 @@ public class DBQueries {
         Cursor cursor = db.rawQuery(query, null);
         if (cursor.moveToFirst()){
             Usuario usuario = new Usuario(cursor.getString(0), cursor.getString(1), cursor.getString(2), cursor.getString(3));
+            db.close();
             return usuario;
         }
+        db.close();
         return null;
     }
 
@@ -61,8 +63,10 @@ public class DBQueries {
         Cursor cursor = db.rawQuery(query, null);
         if (cursor.moveToFirst()){
             Sala sala = new Sala(cursor.getString(0), cursor.getString(1), cursor.getInt(2), cursor.getString(3));
+            db.close();
             return sala;
         }
+        db.close();
         return null;
     }
 
@@ -83,6 +87,51 @@ public class DBQueries {
                         cursor.getString(6)));
             } while (cursor.moveToNext());
         }
+        db.close();
         return reservas;
     }
+
+    public static List<Sala> getSalas(String facultad, Context context ){
+        List<Sala> salas = new ArrayList<>();
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(context, "db", null, 1);
+        SQLiteDatabase db = admin.getWritableDatabase();
+        String query = "SELECT * FROM sala WHERE facultad = '" + facultad + "'";
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.moveToFirst()) {
+            do {
+                salas.add(new Sala(cursor.getString(0), //id
+                        cursor.getString(1),
+                        cursor.getInt(2),
+                        cursor.getString(3)));
+            } while (cursor.moveToNext());
+        }
+        db.close();
+        return salas;
+    }
+
+    public static void updateHorarioSala(String horarioreserva, String horariosala, String sala, Context context){
+        String horario = "00000000000000000000000000000000000000000000000000";
+        for(int i=0; i<50; i++){
+            if(horarioreserva.charAt(i)=='1' || horariosala.charAt(i)=='1'){
+                StringBuilder sb = new StringBuilder(horario);
+                sb.setCharAt(i, '1');
+                horario = sb.toString();
+            }
+        }
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(context, "db", null, 1);
+        SQLiteDatabase db = admin.getWritableDatabase();
+        String query = "UPDATE sala SET horario = '" + horario + "' WHERE nombre = '" + sala + "'";
+        db.execSQL(query);
+        db.close();
+    }
+
+    public static boolean reservar(String docente, String sala, String ramo, String motivo, String horario, Context context){
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(context, "db", null, 1);
+        SQLiteDatabase db = admin.getWritableDatabase();
+        String query = "INSERT INTO reserva (docente, sala, ramo, motivo, horario, estado) VALUES ('" + docente + "', '" + sala + "', '" + ramo + "', '" + motivo + "', '" + horario + "', 'aceptada')";
+        db.execSQL(query);
+        db.close();
+        return true;
+    }
+
 }

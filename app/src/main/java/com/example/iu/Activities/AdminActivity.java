@@ -28,7 +28,7 @@ public class AdminActivity extends AppCompatActivity {
         foto=(ImageView)findViewById(R.id.AdminActivity_foto);
         nombre=(TextView)findViewById(R.id.AdminActivity_nombre);
         tipo=(TextView)findViewById(R.id.AdminActivity_tipo);
-        foto.setImageResource(R.drawable.perfil);
+        foto.setImageResource(R.drawable.admin);
         nombre.setText(usuario.getNombre());
         tipo.setText("Admin");
 

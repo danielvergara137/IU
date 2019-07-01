@@ -6,52 +6,591 @@
     android:layout_height="match_parent"
     tools:context=".Activities.DispDocenteActivity">
 
+    <ImageButton
+        android:id="@+id/info_usuario_button_back"
+        android:layout_width="53dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="back"
+        android:src="@drawable/ic_action_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/home_button_info_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="home"
+        android:src="@drawable/home_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Spinner
-        android:id="@+id/spinner4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/spinner2"
-        app:layout_constraintEnd_toEndOf="@+id/spinner2"
-        app:layout_constraintStart_toStartOf="@+id/editText3"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        android:id="@+id/DispDocenteActivity_ramos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="130dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="77dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="18dp"
         android:text="Consultar disponibilidad"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/editText3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText3"
-        android:layout_width="wrap_content"
+        android:id="@+id/DispDocenteActivity_capacidad"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="90dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/spinner4"
+        android:text="0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="248dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="473dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/DispDocenteActivity_motivos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="160dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner4" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="100dp"
+        android:text="Capacidad"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="130dp"
+        android:text="Asignatura"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="160dp"
+        android:text="Motivo"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:id="@+id/tableLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="386dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/b00"
+                android:layout_width="50dp"
+                android:layout_height="35dp" />
+
+            <Button
+                android:id="@+id/b01"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:text="L" />
+
+            <Button
+                android:id="@+id/b02"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:text="M" />
+
+            <Button
+                android:id="@+id/b03"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:text="X" />
+
+            <Button
+                android:id="@+id/b04"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:text="J" />
+
+            <Button
+                android:id="@+id/b05"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:text="V" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/b10"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:text="1" />
+
+            <Button
+                android:id="@+id/b11"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+
+            <Button
+                android:id="@+id/b12"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b13"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b14"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b15"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/b20"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:text="2" />
+
+            <Button
+                android:id="@+id/b21"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b22"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b23"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b24"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b25"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/b30"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:text="3" />
+
+            <Button
+                android:id="@+id/b31"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b32"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b33"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b34"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b35"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/b40"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:text="4" />
+
+            <Button
+                android:id="@+id/b41"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b42"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b43"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b44"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b45"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/b50"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:text="5" />
+
+            <Button
+                android:id="@+id/b51"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b52"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b53"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b54"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b55"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/b60"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:text="6" />
+
+            <Button
+                android:id="@+id/b61"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b62"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b63"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b64"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b65"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/b70"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:text="7" />
+
+            <Button
+                android:id="@+id/b71"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b72"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b73"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b74"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b75"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/b80"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:text="8" />
+
+            <Button
+                android:id="@+id/b81"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b82"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b83"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b84"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b85"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/b90"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:text="9" />
+
+            <Button
+                android:id="@+id/b91"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b92"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b93"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b94"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b95"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/b100"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar"
+                android:text="10" />
+
+            <Button
+                android:id="@+id/b101"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b102"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b103"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b104"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+
+            <Button
+                android:id="@+id/b105"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:onClick="marcar" />
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/DispDocenteActivity_buscar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="24dp"
+        android:onClick="buscar"
+        android:text="Buscar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

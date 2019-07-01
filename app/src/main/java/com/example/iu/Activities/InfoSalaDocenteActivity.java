@@ -18,7 +18,7 @@ import com.example.iu.R;
 
 import java.util.List;
 
-public class InfoSalaUsuarioActivity extends AppCompatActivity {
+public class InfoSalaDocenteActivity extends AppCompatActivity {
 
     private Sala sala;
     private Usuario usuario;
@@ -97,24 +97,26 @@ public class InfoSalaUsuarioActivity extends AppCompatActivity {
     private Button b103;
     private Button b104;
     private Button b105;
-
+    private Button reservar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info_sala_usuario);
+        setContentView(R.layout.activity_info_sala_docente);
         getSupportActionBar().hide();
+
         usuario =(Usuario)getIntent().getSerializableExtra("usuario_entidad");
         backButton = (ImageButton)findViewById(R.id.info_sala_button_back);
         nombre = (String)getIntent().getSerializableExtra("sala");
         sala = DBQueries.getSala(nombre,this);
         horario = sala.getHorario();
         reservas = DBQueries.getReservas(nombre, this);
-        vistanombre = (TextView)findViewById(R.id.InfoSalaUsuarioActivity_sala);
-        vistacapacidad = (TextView)findViewById(R.id.InfoSalaUsuarioActivity_capacidad);
-        vistaramo = (TextView)findViewById(R.id.InfoSalaUsuarioActivity_ramo);
-        vistaprofe = (TextView)findViewById(R.id.InfoSalaUsuarioActivity_profe);
-        vistacorreo = (TextView)findViewById(R.id.InfoSalaUsuarioActivity_correo);
+        vistanombre = (TextView)findViewById(R.id.InfoSalaDocenteActivity_sala);
+        vistacapacidad = (TextView)findViewById(R.id.InfoSalaDocenteActivity_capacidad);
+        vistaramo = (TextView)findViewById(R.id.InfoSalaDocenteActivity_ramo);
+        vistaprofe = (TextView)findViewById(R.id.InfoSalaDocenteActivity_profe);
+        vistacorreo = (TextView)findViewById(R.id.InfoSalaDocenteActivity_correo);
+        reservar = (Button)findViewById(R.id.InfoSalaDocenteActivity_botonreservar);
         vistaramo.setVisibility(View.INVISIBLE);
         vistaprofe.setVisibility(View.INVISIBLE);
         vistacorreo.setVisibility(View.INVISIBLE);
@@ -341,7 +343,7 @@ public class InfoSalaUsuarioActivity extends AppCompatActivity {
     }
 
     public void mostrarInfo(View view){
-        	if(view==b11) {
+        if(view==b11) {
             Reserva reserva = buscar(0);
             if(reserva != null) {
                 Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
@@ -1195,7 +1197,6 @@ public class InfoSalaUsuarioActivity extends AppCompatActivity {
     }
 
     public Reserva buscar(int hora){
-        System.out.println(reservas.size());
         for(int i=0; i < reservas.size(); i++){
             Reserva reserva = reservas.get(i);
             String horasreserva = reserva.getHorario();
@@ -1205,13 +1206,22 @@ public class InfoSalaUsuarioActivity extends AppCompatActivity {
         }
         return null;
     }
+
     public void back(View view){
         super.onBackPressed();
     }
 
     public void home(View view){
-        Intent UsuarioActivity = new Intent(this, UsuarioActivity.class);
-        UsuarioActivity.putExtra("usuario_entidad", usuario);
-        startActivity(UsuarioActivity);
+        Intent DocenteActivity = new Intent(this, DocenteActivity.class);
+        DocenteActivity.putExtra("usuario_entidad", usuario);
+        startActivity(DocenteActivity);
+    }
+
+    public void reservar(View view){
+        Intent ReservarActivity = new Intent(this, InfoSalaReservaActivity.class);
+        ReservarActivity.putExtra("usuario_entidad", usuario);
+        ReservarActivity.putExtra("sala", sala);
+        startActivity(ReservarActivity);
     }
 }
+

@@ -6,5 +6,10 @@
         <item>Ingeniería de Software 2</item>
         <item>Interfaces de Usuario</item>
     </string-array>
+    <string-array name="motivos">
+        <item>Evaluación</item>
+        <item>Reunión</item>
+        <item>Clase</item>
+    </string-array>
 
 </resources>

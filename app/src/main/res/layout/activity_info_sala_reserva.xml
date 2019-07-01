@@ -4,21 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.InfoSalaUsuarioActivity">
+    tools:context=".Activities.InfoSalaReservaActivity">
 
     <ImageButton
-        android:id="@+id/info_sala_button_back"
-        android:layout_width="50dp"
+        android:id="@+id/info_usuario_button_back"
+        android:layout_width="53dp"
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
         android:onClick="back"
         android:src="@drawable/ic_action_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/home_button_info_sala_usuario"
+        android:id="@+id/home_button_info_usuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -30,36 +31,65 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/InfoSalaUsuarioActivity_capacidad"
+    <Spinner
+        android:id="@+id/DispDocenteActivity_ramos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="180dp"
         android:layout_marginTop="100dp"
-        android:text="Capacidad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="8dp"
+        android:text="Solicitar Reserva"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/DispDocenteActivity_motivos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="130dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="100dp"
+        android:text="Asignatura"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/InfoSalaUsuarioActivity_sala"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="8dp"
-        android:text="Sala"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="130dp"
+        android:text="Motivo"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/home_button_info_sala_usuario" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
         android:id="@+id/tableLayout2"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="386dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="170dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -120,32 +150,32 @@
                 android:id="@+id/b11"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
 
             <Button
                 android:id="@+id/b12"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b13"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b14"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b15"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
         </TableRow>
 
@@ -163,31 +193,31 @@
                 android:id="@+id/b21"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b22"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b23"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b24"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b25"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
         </TableRow>
 
@@ -205,31 +235,31 @@
                 android:id="@+id/b31"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b32"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b33"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b34"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b35"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
         </TableRow>
 
@@ -247,31 +277,31 @@
                 android:id="@+id/b41"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b42"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b43"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b44"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b45"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
         </TableRow>
 
@@ -289,31 +319,31 @@
                 android:id="@+id/b51"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b52"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b53"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b54"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b55"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
         </TableRow>
 
@@ -331,31 +361,31 @@
                 android:id="@+id/b61"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b62"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b63"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b64"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b65"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
         </TableRow>
 
@@ -373,31 +403,31 @@
                 android:id="@+id/b71"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b72"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b73"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b74"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b75"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
         </TableRow>
 
@@ -415,31 +445,31 @@
                 android:id="@+id/b81"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b82"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b83"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b84"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b85"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
         </TableRow>
 
@@ -457,31 +487,31 @@
                 android:id="@+id/b91"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b92"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b93"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b94"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b95"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
         </TableRow>
 
         <TableRow
@@ -492,75 +522,52 @@
                 android:id="@+id/b100"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo"
+                android:onClick="marcar"
                 android:text="10" />
 
             <Button
                 android:id="@+id/b101"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b102"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b103"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b104"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
 
             <Button
                 android:id="@+id/b105"
                 android:layout_width="50dp"
                 android:layout_height="35dp"
-                android:onClick="mostrarInfo" />
+                android:onClick="marcar" />
         </TableRow>
     </TableLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <Button
+        android:id="@+id/InfoSalaReserva_reservar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="80dp"
-        android:backgroundTint="#8BC34A"
-        android:orientation="vertical"
+        android:layout_marginBottom="32dp"
+        android:onClick="reservar"
+        android:text="Solicitar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/InfoSalaUsuarioActivity_ramo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/InfoSalaUsuarioActivity_profe"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/InfoSalaUsuarioActivity_correo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textSize="14sp" />
-
-    </LinearLayout>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

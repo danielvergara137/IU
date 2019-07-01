@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.InfoSalaUsuarioActivity">
+    tools:context=".Activities.InfoSalaDocenteActivity">
 
     <ImageButton
         android:id="@+id/info_sala_button_back"
@@ -31,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/InfoSalaUsuarioActivity_capacidad"
+        android:id="@+id/InfoSalaDocenteActivity_capacidad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
@@ -42,12 +42,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/InfoSalaUsuarioActivity_sala"
+        android:id="@+id/InfoSalaDocenteActivity_sala"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="50dp"
-        android:layout_marginEnd="8dp"
         android:text="Sala"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +56,7 @@
     <TableLayout
         android:id="@+id/tableLayout2"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="385dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="130dp"
         android:layout_marginEnd="8dp"
@@ -541,26 +540,39 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/InfoSalaUsuarioActivity_ramo"
+            android:id="@+id/InfoSalaDocenteActivity_ramo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/InfoSalaUsuarioActivity_profe"
+            android:id="@+id/InfoSalaDocenteActivity_profe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/InfoSalaUsuarioActivity_correo"
+            android:id="@+id/InfoSalaDocenteActivity_correo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
             android:textSize="14sp" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/InfoSalaDocenteActivity_botonreservar"
+        android:layout_width="193dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="reservar"
+        android:text="Reservar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

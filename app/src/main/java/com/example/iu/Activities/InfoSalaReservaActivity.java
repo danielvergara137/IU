@@ -7,19 +7,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import com.example.iu.DB.DBQueries;
+import com.example.iu.Entities.Sala;
 import com.example.iu.Entities.Usuario;
 import com.example.iu.R;
 
-public class DispDocenteActivity extends AppCompatActivity {
+public class InfoSalaReservaActivity extends AppCompatActivity {
 
     private Usuario usuario;
-    private EditText capacidad;
+    private Sala sala;
     private Spinner spinnermotivo;
     private Spinner spinnerramo;
-    private Button buscar;
+    private Button reservar;
     private Button b00;
     private Button b01;
     private Button b02;
@@ -87,17 +89,21 @@ public class DispDocenteActivity extends AppCompatActivity {
     private Button b104;
     private Button b105;
     private String motivo;
-    private int cap;
+    private String ramo;
     private String horario;
+    private String horarioreserva;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_disp_docente);
+        setContentView(R.layout.activity_info_sala_reserva);
         getSupportActionBar().hide();
-        usuario =(Usuario)getIntent().getSerializableExtra("usuario_entidad");
-        capacidad = (EditText)findViewById(R.id.DispDocenteActivity_capacidad);
-        buscar = (Button)findViewById(R.id.DispDocenteActivity_buscar);
+
+        usuario = (Usuario)getIntent().getSerializableExtra("usuario_entidad");
+        sala = (Sala)getIntent().getSerializableExtra("sala");
+        horario = sala.getHorario();
+
+        reservar = (Button)findViewById(R.id.InfoSalaReserva_reservar);
         b00 = findViewById(R.id.b00);
         b01 = findViewById(R.id.b01);
         b02 = findViewById(R.id.b02);
@@ -177,10 +183,160 @@ public class DispDocenteActivity extends AppCompatActivity {
         adaptermotivo.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnermotivo.setAdapter(adaptermotivo);
 
+        if(horario.charAt(0)=='1') {
+            b11.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(1)=='1') {
+            b12.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(2)=='1') {
+            b13.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(3)=='1') {
+            b14.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(4)=='1') {
+            b15.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(5)=='1') {
+            b21.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(6)=='1') {
+            b22.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(7)=='1') {
+            b23.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(8)=='1') {
+            b24.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(9)=='1') {
+            b25.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(10)=='1') {
+            b31.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(11)=='1') {
+            b32.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(12)=='1') {
+            b33.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(13)=='1') {
+            b34.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(14)=='1') {
+            b35.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(15)=='1') {
+            b41.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(16)=='1') {
+            b42.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(17)=='1') {
+            b43.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(18)=='1') {
+            b44.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(19)=='1') {
+            b45.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(20)=='1') {
+            b51.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(21)=='1') {
+            b52.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(22)=='1') {
+            b53.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(23)=='1') {
+            b54.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(24)=='1') {
+            b55.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(25)=='1') {
+            b61.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(26)=='1') {
+            b62.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(27)=='1') {
+            b63.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(28)=='1') {
+            b64.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(29)=='1') {
+            b65.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(30)=='1') {
+            b71.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(31)=='1') {
+            b72.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(32)=='1') {
+            b73.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(33)=='1') {
+            b74.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(34)=='1') {
+            b75.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(35)=='1') {
+            b81.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(36)=='1') {
+            b82.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(37)=='1') {
+            b83.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(38)=='1') {
+            b84.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(39)=='1') {
+            b85.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(40)=='1') {
+            b91.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(41)=='1') {
+            b92.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(42)=='1') {
+            b93.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(43)=='1') {
+            b94.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(44)=='1') {
+            b95.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(45)=='1') {
+            b101.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(46)=='1') {
+            b102.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(47)=='1') {
+            b103.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(48)=='1') {
+            b104.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
+        if(horario.charAt(49)=='1') {
+            b105.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        }
     }
 
     public void marcar(View view){
-        if(view==b11){
+        if(view==b11 && horario.charAt(0)=='0'){
             if(b11.isSelected()==false) {
                 b11.setSelected(true);
                 b11.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -190,7 +346,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b11.getBackground().clearColorFilter();
             }
         }
-        else if(view==b12){
+        else if(view==b12 && horario.charAt(1)=='0'){
             if(b12.isSelected()==false) {
                 b12.setSelected(true);
                 b12.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -200,7 +356,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b12.getBackground().clearColorFilter();
             }
         }
-        else if(view==b13){
+        else if(view==b13 && horario.charAt(2)=='0'){
             if(b13.isSelected()==false) {
                 b13.setSelected(true);
                 b13.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -210,7 +366,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b13.getBackground().clearColorFilter();
             }
         }
-        else if(view==b14){
+        else if(view==b14 && horario.charAt(3)=='0'){
             if(b14.isSelected()==false) {
                 b14.setSelected(true);
                 b14.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -220,7 +376,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b14.getBackground().clearColorFilter();
             }
         }
-        else if(view==b15){
+        else if(view==b15 && horario.charAt(4)=='0'){
             if(b15.isSelected()==false) {
                 b15.setSelected(true);
                 b15.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -230,7 +386,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b15.getBackground().clearColorFilter();
             }
         }
-        else if(view==b21){
+        else if(view==b21 && horario.charAt(5)=='0'){
             if(b21.isSelected()==false) {
                 b21.setSelected(true);
                 b21.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -240,7 +396,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b21.getBackground().clearColorFilter();
             }
         }
-        else if(view==b22){
+        else if(view==b22 && horario.charAt(6)=='0'){
             if(b22.isSelected()==false) {
                 b22.setSelected(true);
                 b22.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -250,7 +406,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b22.getBackground().clearColorFilter();
             }
         }
-        else if(view==b23){
+        else if(view==b23 && horario.charAt(7)=='0'){
             if(b23.isSelected()==false) {
                 b23.setSelected(true);
                 b23.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -260,7 +416,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b23.getBackground().clearColorFilter();
             }
         }
-        else if(view==b24){
+        else if(view==b24 && horario.charAt(8)=='0'){
             if(b24.isSelected()==false) {
                 b24.setSelected(true);
                 b24.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -270,7 +426,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b24.getBackground().clearColorFilter();
             }
         }
-        else if(view==b25){
+        else if(view==b25 && horario.charAt(9)=='0'){
             if(b25.isSelected()==false) {
                 b25.setSelected(true);
                 b25.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -280,7 +436,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b25.getBackground().clearColorFilter();
             }
         }
-        else if(view==b31){
+        else if(view==b31 && horario.charAt(10)=='0'){
             if(b31.isSelected()==false) {
                 b31.setSelected(true);
                 b31.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -290,7 +446,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b31.getBackground().clearColorFilter();
             }
         }
-        else if(view==b32){
+        else if(view==b32 && horario.charAt(11)=='0'){
             if(b32.isSelected()==false) {
                 b32.setSelected(true);
                 b32.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -300,7 +456,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b32.getBackground().clearColorFilter();
             }
         }
-        else if(view==b33){
+        else if(view==b33 && horario.charAt(12)=='0'){
             if(b33.isSelected()==false) {
                 b33.setSelected(true);
                 b33.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -310,7 +466,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b33.getBackground().clearColorFilter();
             }
         }
-        else if(view==b34){
+        else if(view==b34 && horario.charAt(13)=='0'){
             if(b34.isSelected()==false) {
                 b34.setSelected(true);
                 b34.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -320,7 +476,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b34.getBackground().clearColorFilter();
             }
         }
-        else if(view==b35){
+        else if(view==b35 && horario.charAt(14)=='0'){
             if(b35.isSelected()==false) {
                 b35.setSelected(true);
                 b35.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -330,7 +486,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b35.getBackground().clearColorFilter();
             }
         }
-        else if(view==b41){
+        else if(view==b41 && horario.charAt(15)=='0'){
             if(b41.isSelected()==false) {
                 b41.setSelected(true);
                 b41.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -340,7 +496,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b41.getBackground().clearColorFilter();
             }
         }
-        else if(view==b42){
+        else if(view==b42 && horario.charAt(16)=='0'){
             if(b42.isSelected()==false) {
                 b42.setSelected(true);
                 b42.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -350,7 +506,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b42.getBackground().clearColorFilter();
             }
         }
-        else if(view==b43){
+        else if(view==b43 && horario.charAt(17)=='0'){
             if(b43.isSelected()==false) {
                 b43.setSelected(true);
                 b43.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -360,7 +516,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b43.getBackground().clearColorFilter();
             }
         }
-        else if(view==b44){
+        else if(view==b44 && horario.charAt(18)=='0'){
             if(b44.isSelected()==false) {
                 b44.setSelected(true);
                 b44.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -370,7 +526,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b44.getBackground().clearColorFilter();
             }
         }
-        else if(view==b45){
+        else if(view==b45 && horario.charAt(19)=='0'){
             if(b45.isSelected()==false) {
                 b45.setSelected(true);
                 b45.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -380,7 +536,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b45.getBackground().clearColorFilter();
             }
         }
-        else if(view==b51){
+        else if(view==b51 && horario.charAt(20)=='0'){
             if(b51.isSelected()==false) {
                 b51.setSelected(true);
                 b51.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -390,7 +546,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b51.getBackground().clearColorFilter();
             }
         }
-        else if(view==b52){
+        else if(view==b52 && horario.charAt(21)=='0'){
             if(b52.isSelected()==false) {
                 b52.setSelected(true);
                 b52.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -400,7 +556,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b52.getBackground().clearColorFilter();
             }
         }
-        else if(view==b53){
+        else if(view==b53 && horario.charAt(22)=='0'){
             if(b53.isSelected()==false) {
                 b53.setSelected(true);
                 b53.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -410,7 +566,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b53.getBackground().clearColorFilter();
             }
         }
-        else if(view==b54){
+        else if(view==b54 && horario.charAt(23)=='0'){
             if(b54.isSelected()==false) {
                 b54.setSelected(true);
                 b54.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -420,7 +576,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b54.getBackground().clearColorFilter();
             }
         }
-        else if(view==b55){
+        else if(view==b55 && horario.charAt(24)=='0'){
             if(b55.isSelected()==false) {
                 b55.setSelected(true);
                 b55.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -430,7 +586,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b55.getBackground().clearColorFilter();
             }
         }
-        else if(view==b61){
+        else if(view==b61 && horario.charAt(25)=='0'){
             if(b61.isSelected()==false) {
                 b61.setSelected(true);
                 b61.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -440,7 +596,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b61.getBackground().clearColorFilter();
             }
         }
-        else if(view==b62){
+        else if(view==b62 && horario.charAt(26)=='0'){
             if(b62.isSelected()==false) {
                 b62.setSelected(true);
                 b62.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -450,7 +606,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b62.getBackground().clearColorFilter();
             }
         }
-        else if(view==b63){
+        else if(view==b63 && horario.charAt(27)=='0'){
             if(b63.isSelected()==false) {
                 b63.setSelected(true);
                 b63.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -460,7 +616,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b63.getBackground().clearColorFilter();
             }
         }
-        else if(view==b64){
+        else if(view==b64 && horario.charAt(28)=='0'){
             if(b64.isSelected()==false) {
                 b64.setSelected(true);
                 b64.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -470,7 +626,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b64.getBackground().clearColorFilter();
             }
         }
-        else if(view==b65){
+        else if(view==b65 && horario.charAt(29)=='0'){
             if(b65.isSelected()==false) {
                 b65.setSelected(true);
                 b65.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -480,7 +636,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b65.getBackground().clearColorFilter();
             }
         }
-        else if(view==b71){
+        else if(view==b71 && horario.charAt(30)=='0'){
             if(b71.isSelected()==false) {
                 b71.setSelected(true);
                 b71.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -490,7 +646,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b71.getBackground().clearColorFilter();
             }
         }
-        else if(view==b72){
+        else if(view==b72 && horario.charAt(31)=='0'){
             if(b72.isSelected()==false) {
                 b72.setSelected(true);
                 b72.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -500,7 +656,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b72.getBackground().clearColorFilter();
             }
         }
-        else if(view==b73){
+        else if(view==b73 && horario.charAt(32)=='0'){
             if(b73.isSelected()==false) {
                 b73.setSelected(true);
                 b73.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -510,7 +666,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b73.getBackground().clearColorFilter();
             }
         }
-        else if(view==b74){
+        else if(view==b74 && horario.charAt(33)=='0'){
             if(b74.isSelected()==false) {
                 b74.setSelected(true);
                 b74.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -520,7 +676,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b74.getBackground().clearColorFilter();
             }
         }
-        else if(view==b75){
+        else if(view==b75 && horario.charAt(34)=='0'){
             if(b75.isSelected()==false) {
                 b75.setSelected(true);
                 b75.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -530,7 +686,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b75.getBackground().clearColorFilter();
             }
         }
-        else if(view==b81){
+        else if(view==b81 && horario.charAt(35)=='0'){
             if(b81.isSelected()==false) {
                 b81.setSelected(true);
                 b81.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -540,7 +696,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b81.getBackground().clearColorFilter();
             }
         }
-        else if(view==b82){
+        else if(view==b82 && horario.charAt(36)=='0'){
             if(b82.isSelected()==false) {
                 b82.setSelected(true);
                 b82.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -550,7 +706,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b82.getBackground().clearColorFilter();
             }
         }
-        else if(view==b83){
+        else if(view==b83 && horario.charAt(37)=='0'){
             if(b83.isSelected()==false) {
                 b83.setSelected(true);
                 b83.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -560,7 +716,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b83.getBackground().clearColorFilter();
             }
         }
-        else if(view==b84){
+        else if(view==b84 && horario.charAt(38)=='0'){
             if(b84.isSelected()==false) {
                 b84.setSelected(true);
                 b84.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -570,7 +726,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b84.getBackground().clearColorFilter();
             }
         }
-        else if(view==b85){
+        else if(view==b85 && horario.charAt(39)=='0'){
             if(b85.isSelected()==false) {
                 b85.setSelected(true);
                 b85.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -580,7 +736,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b85.getBackground().clearColorFilter();
             }
         }
-        else if(view==b91){
+        else if(view==b91 && horario.charAt(40)=='0'){
             if(b91.isSelected()==false) {
                 b91.setSelected(true);
                 b91.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -590,7 +746,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b91.getBackground().clearColorFilter();
             }
         }
-        else if(view==b92){
+        else if(view==b92 && horario.charAt(41)=='0'){
             if(b92.isSelected()==false) {
                 b92.setSelected(true);
                 b92.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -600,7 +756,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b92.getBackground().clearColorFilter();
             }
         }
-        else if(view==b93){
+        else if(view==b93 && horario.charAt(42)=='0'){
             if(b93.isSelected()==false) {
                 b93.setSelected(true);
                 b93.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -610,7 +766,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b93.getBackground().clearColorFilter();
             }
         }
-        else if(view==b94){
+        else if(view==b94 && horario.charAt(43)=='0'){
             if(b94.isSelected()==false) {
                 b94.setSelected(true);
                 b94.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -620,7 +776,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b94.getBackground().clearColorFilter();
             }
         }
-        else if(view==b95){
+        else if(view==b95 && horario.charAt(44)=='0'){
             if(b95.isSelected()==false) {
                 b95.setSelected(true);
                 b95.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -630,7 +786,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b95.getBackground().clearColorFilter();
             }
         }
-        else if(view==b101){
+        else if(view==b101 && horario.charAt(45)=='0'){
             if(b101.isSelected()==false) {
                 b101.setSelected(true);
                 b101.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -640,7 +796,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b101.getBackground().clearColorFilter();
             }
         }
-        else if(view==b102){
+        else if(view==b102 && horario.charAt(46)=='0'){
             if(b102.isSelected()==false) {
                 b102.setSelected(true);
                 b102.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -650,7 +806,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b102.getBackground().clearColorFilter();
             }
         }
-        else if(view==b103){
+        else if(view==b103 && horario.charAt(47)=='0'){
             if(b103.isSelected()==false) {
                 b103.setSelected(true);
                 b103.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -660,7 +816,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b103.getBackground().clearColorFilter();
             }
         }
-        else if(view==b104){
+        else if(view==b104 && horario.charAt(48)=='0'){
             if(b104.isSelected()==false) {
                 b104.setSelected(true);
                 b104.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -670,7 +826,7 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b104.getBackground().clearColorFilter();
             }
         }
-        else if(view==b105){
+        else if(view==b105 && horario.charAt(49)=='0'){
             if(b105.isSelected()==false) {
                 b105.setSelected(true);
                 b105.getBackground().setColorFilter(0xFF3F51B5, PorterDuff.Mode.MULTIPLY);
@@ -680,7 +836,6 @@ public class DispDocenteActivity extends AppCompatActivity {
                 b105.getBackground().clearColorFilter();
             }
         }
-
     }
 
     public String horarioreserva(){
@@ -938,18 +1093,18 @@ public class DispDocenteActivity extends AppCompatActivity {
         return horasreserva;
     }
 
-    public void buscar(View view){
-        if(view==buscar){
-            horario = horarioreserva();
-            if(capacidad.getText().toString().equals("")) cap=0;
-            else cap = Integer.parseInt(capacidad.getText().toString());
-            Intent DispResultadosDocenteActivity = new Intent(this, DispResultadosDocenteActivity.class);
-            DispResultadosDocenteActivity.putExtra("usuario", usuario);
-            DispResultadosDocenteActivity.putExtra("capacidad", cap);
-            DispResultadosDocenteActivity.putExtra("motivo", spinnermotivo.getSelectedItem().toString());
-            DispResultadosDocenteActivity.putExtra("ramo", spinnerramo.getSelectedItem().toString());
-            DispResultadosDocenteActivity.putExtra("horario", horario);
-            startActivity(DispResultadosDocenteActivity);
+    public void reservar(View view){
+        if(view == reservar){
+            horarioreserva = horarioreserva();
+            motivo = spinnermotivo.getSelectedItem().toString();
+            ramo = spinnerramo.getSelectedItem().toString();
+            if(DBQueries.reservar(usuario.getUsername(),sala.getNombre(),ramo,motivo,horarioreserva,this)){
+                DBQueries.updateHorarioSala(horarioreserva, sala.getHorario(), sala.getNombre(), this);
+                Toast.makeText(this, "Reserva de sala " + sala.getNombre() + "realizada con éxito", Toast.LENGTH_SHORT).show();
+                Intent DocenteActivity = new Intent(this, DocenteActivity.class);
+                DocenteActivity.putExtra("usuario_entidad", usuario);
+                startActivity(DocenteActivity);
+            }
         }
     }
 

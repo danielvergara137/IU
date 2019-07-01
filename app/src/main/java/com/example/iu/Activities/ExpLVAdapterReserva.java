@@ -7,26 +7,34 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
-
+import com.example.iu.DB.DBQueries;
+import com.example.iu.Entities.Sala;
 import com.example.iu.Entities.Usuario;
 import com.example.iu.R;
 
 import java.util.ArrayList;
 import java.util.Map;
 
-public class ExpLVAdapter extends BaseExpandableListAdapter {
+public class ExpLVAdapterReserva extends BaseExpandableListAdapter {
 
     private ArrayList<String> listCategoria;
     private Map<String, ArrayList<String>> mapChild;
     private Context context;
     private Usuario usuario;
+    private String ramo;
+    private String motivo;
+    private String horario;
 
-    public ExpLVAdapter(ArrayList<String> listCategoria, Map<String, ArrayList<String>> mapChild, Context context, Usuario usuario) {
+    public ExpLVAdapterReserva(ArrayList<String> listCategoria, Map<String, ArrayList<String>> mapChild, Context context, Usuario usuario, String ramo, String motivo, String horario) {
         this.listCategoria = listCategoria;
         this.mapChild = mapChild;
         this.context = context;
         this.usuario = usuario;
+        this.ramo = ramo;
+        this.motivo = motivo;
+        this.horario = horario;
     }
 
     public Usuario getUsuario(){
@@ -84,29 +92,18 @@ public class ExpLVAdapter extends BaseExpandableListAdapter {
         }
 
         final String item = (String) getChild(i, i1);
-        System.out.println(item);
         TextView textView = (TextView) view.findViewById(R.id.tvChild);
         textView.setText(item);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (usuario.getTipo().equals("alumno")) {
-                    Intent intent = new Intent(context,InfoSalaUsuarioActivity.class);
-                    intent.putExtra("sala", item);
-                    intent.putExtra("usuario_entidad", usuario);
-                    context.startActivity(intent);
-                }
-                else if (usuario.getTipo().equals("docente")){
-                    Intent intent = new Intent(context,InfoSalaDocenteActivity.class);
-                    intent.putExtra("sala", item);
-                    intent.putExtra("usuario_entidad", usuario);
-                    context.startActivity(intent);
-                }
-                else if (usuario.getTipo().equals("admin")){
-                    Intent intent = new Intent(context,InfoSalaUsuarioActivity.class);
-                    intent.putExtra("sala", item);
-                    intent.putExtra("usuario_entidad", usuario);
-                    context.startActivity(intent);
+                if(DBQueries.reservar(usuario.getUsername(), item, ramo, motivo, horario, context)) {
+                    Sala sala = DBQueries.getSala(item, context);
+                    DBQueries.updateHorarioSala(horario, sala.getHorario(), sala.getNombre(), context);
+                    Toast.makeText(context, "Reserva de sala " + item + "realizada con éxito", Toast.LENGTH_SHORT).show();
+                    Intent DocenteActivity = new Intent(context, DocenteActivity.class);
+                    DocenteActivity.putExtra("usuario_entidad", usuario);
+                    context.startActivity(DocenteActivity);
                 }
             }
         });
@@ -118,4 +115,3 @@ public class ExpLVAdapter extends BaseExpandableListAdapter {
         return true;
     }
 }
-
