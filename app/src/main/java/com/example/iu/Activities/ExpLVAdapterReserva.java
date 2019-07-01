@@ -1,7 +1,12 @@
 package com.example.iu.Activities;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +40,7 @@ public class ExpLVAdapterReserva extends BaseExpandableListAdapter {
         this.ramo = ramo;
         this.motivo = motivo;
         this.horario = horario;
+
     }
 
     public Usuario getUsuario(){
@@ -94,9 +100,39 @@ public class ExpLVAdapterReserva extends BaseExpandableListAdapter {
         final String item = (String) getChild(i, i1);
         TextView textView = (TextView) view.findViewById(R.id.tvChild);
         textView.setText(item);
+
+
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+// Add the buttons
+                builder.setPositiveButton("Solicitar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        if(DBQueries.reservar(usuario.getUsername(), item, ramo, motivo, horario, context)) {
+                            Sala sala = DBQueries.getSala(item, context);
+                            DBQueries.updateHorarioSala(horario, sala.getHorario(), sala.getNombre(), context);
+                            Toast.makeText(context, "Reserva de sala " + item + " realizada con éxito", Toast.LENGTH_SHORT).show();
+                            Intent DocenteActivity = new Intent(context, DocenteActivity.class);
+                            DocenteActivity.putExtra("usuario_entidad", usuario);
+                            context.startActivity(DocenteActivity);
+                        }
+                    }
+                });
+                builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User cancelled the dialog
+                    }
+                });
+// Set other dialog properties
+                builder.setMessage("Desea solicitar la sala "+ item +" ?")
+                        .setTitle("Solicitud de sala");
+
+// Create the AlertDialog
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
+                /*
                 if(DBQueries.reservar(usuario.getUsername(), item, ramo, motivo, horario, context)) {
                     Sala sala = DBQueries.getSala(item, context);
                     DBQueries.updateHorarioSala(horario, sala.getHorario(), sala.getNombre(), context);
@@ -104,7 +140,7 @@ public class ExpLVAdapterReserva extends BaseExpandableListAdapter {
                     Intent DocenteActivity = new Intent(context, DocenteActivity.class);
                     DocenteActivity.putExtra("usuario_entidad", usuario);
                     context.startActivity(DocenteActivity);
-                }
+                }*/
             }
         });
         return view;
