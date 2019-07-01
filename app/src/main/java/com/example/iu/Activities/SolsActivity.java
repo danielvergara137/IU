@@ -25,8 +25,8 @@ public class SolsActivity extends AppCompatActivity {
     private ExpandableListView expLV;
     private ArrayList<String> listCategoria;
     private List<Reserva> reservas;
-    private ExpLVAdapter adapter;
-    private Map<String, ArrayList<String>> mapChild;
+    private ExpLVAdapterSolicitudes adapter;
+    private Map<String, ArrayList<Integer>> mapChild;
     private Usuario usuario;
 
     @Override
@@ -48,15 +48,15 @@ public class SolsActivity extends AppCompatActivity {
     }
 
     public void cargarDatos(){
-        ArrayList<String> Solicitudes = new ArrayList<>();
+        ArrayList<Integer> Solicitudes = new ArrayList<>();
         listCategoria.add("Solicitudes");
         reservas = DBQueries.getReservasPendientes(this);
         System.out.println(reservas.size());
         for(int i=0; i< reservas.size();i++) {
-            Solicitudes.add(reservas.get(i).getSala());
+            Solicitudes.add(reservas.get(i).getId());
         }
         mapChild.put(listCategoria.get(0), Solicitudes);
-        adapter = new ExpLVAdapter(listCategoria, mapChild, this, usuario);
+        adapter = new ExpLVAdapterSolicitudes(listCategoria, mapChild, this, usuario, reservas);
         expLV.setAdapter(adapter);
     }
 }
