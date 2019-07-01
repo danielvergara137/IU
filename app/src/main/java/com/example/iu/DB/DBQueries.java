@@ -169,4 +169,12 @@ public class DBQueries {
         return null;
     }
 
+    public static void updateEstadoReserva(int id, String estado, Context context){
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(context, "db", null, 1);
+        SQLiteDatabase db = admin.getWritableDatabase();
+        String query = "UPDATE reserva SET estado = '" + estado + "' WHERE id = '" + id + "'";
+        db.execSQL(query);
+        db.close();
+    }
+
 }
