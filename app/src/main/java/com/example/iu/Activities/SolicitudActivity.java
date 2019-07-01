@@ -99,6 +99,8 @@ public class SolicitudActivity extends AppCompatActivity {
     private Button b105;
     private Reserva reserva;
     private String horarioReserva;
+    private Button botonAceptar;
+    private Button botonRechazar;
 
 
     @Override
@@ -112,6 +114,8 @@ public class SolicitudActivity extends AppCompatActivity {
         sala = DBQueries.getSala(reserva.getSala(),this);
         horarioReserva = reserva.getHorario();
         horario = sala.getHorario();
+        botonAceptar = (Button)findViewById(R.id.aceptarSol);
+        botonRechazar = (Button)findViewById(R.id.rechazarSol);
         reservas = DBQueries.getReservas(nombre, this);
         vistanombre = (TextView)findViewById(R.id.InfoSalaUsuarioActivity_sala);
         vistacapacidad = (TextView)findViewById(R.id.InfoSalaUsuarioActivity_capacidad);
@@ -1364,8 +1368,16 @@ public class SolicitudActivity extends AppCompatActivity {
     }
 
     public void home(View view){
-        Intent UsuarioActivity = new Intent(this, UsuarioActivity.class);
-        UsuarioActivity.putExtra("usuario_entidad", usuario);
-        startActivity(UsuarioActivity);
+        Intent AdminActivity = new Intent(this, AdminActivity.class);
+        AdminActivity.putExtra("usuario_entidad", usuario);
+        startActivity(AdminActivity);
+    }
+
+    public void Aceptar(View view){
+        DBQueries.updateHorarioSala(horarioReserva, horario, reserva.getSala(), this);
+    }
+
+    public void Rechazar(View view){
+        DBQueries.updateEstadoReserva(reserva.getId(), "rechazada", this);
     }
 }
