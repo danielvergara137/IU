@@ -16,6 +16,7 @@ import com.example.iu.Entities.Sala;
 import com.example.iu.Entities.Usuario;
 import com.example.iu.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class InfoSalaDocenteActivity extends AppCompatActivity {
@@ -98,19 +99,21 @@ public class InfoSalaDocenteActivity extends AppCompatActivity {
     private Button b104;
     private Button b105;
     private Button reservar;
+    private List<Reserva> ReservasPendientes;
+    private List<Button> Buttongrid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_sala_docente);
         getSupportActionBar().hide();
-
         usuario =(Usuario)getIntent().getSerializableExtra("usuario_entidad");
         backButton = (ImageButton)findViewById(R.id.info_sala_button_back);
         nombre = (String)getIntent().getSerializableExtra("sala");
         sala = DBQueries.getSala(nombre,this);
         horario = sala.getHorario();
         reservas = DBQueries.getReservas(nombre, this);
+        ReservasPendientes = DBQueries.getReservasPendientesSala(sala.getNombre(), this);
         vistanombre = (TextView)findViewById(R.id.InfoSalaDocenteActivity_sala);
         vistacapacidad = (TextView)findViewById(R.id.InfoSalaDocenteActivity_capacidad);
         vistaramo = (TextView)findViewById(R.id.InfoSalaDocenteActivity_ramo);
@@ -190,1017 +193,115 @@ public class InfoSalaDocenteActivity extends AppCompatActivity {
         vistanombre.setText("Sala: " + sala.getNombre());
         vistacapacidad.setText("Capacidad: " + String.valueOf(sala.getCapacidad()));
 
-        if(horario.charAt(0)=='1') {
-            b11.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        Buttongrid = new ArrayList<Button>();
+        Buttongrid.add(b11);
+        Buttongrid.add(b12);
+        Buttongrid.add(b13);
+        Buttongrid.add(b14);
+        Buttongrid.add(b15);
+        Buttongrid.add(b21);
+        Buttongrid.add(b22);
+        Buttongrid.add(b23);
+        Buttongrid.add(b24);
+        Buttongrid.add(b25);
+        Buttongrid.add(b31);
+        Buttongrid.add(b32);
+        Buttongrid.add(b33);
+        Buttongrid.add(b34);
+        Buttongrid.add(b35);
+        Buttongrid.add(b41);
+        Buttongrid.add(b42);
+        Buttongrid.add(b43);
+        Buttongrid.add(b44);
+        Buttongrid.add(b45);
+        Buttongrid.add(b51);
+        Buttongrid.add(b52);
+        Buttongrid.add(b53);
+        Buttongrid.add(b54);
+        Buttongrid.add(b55);
+        Buttongrid.add(b61);
+        Buttongrid.add(b62);
+        Buttongrid.add(b63);
+        Buttongrid.add(b64);
+        Buttongrid.add(b65);
+        Buttongrid.add(b71);
+        Buttongrid.add(b72);
+        Buttongrid.add(b73);
+        Buttongrid.add(b74);
+        Buttongrid.add(b75);
+        Buttongrid.add(b81);
+        Buttongrid.add(b82);
+        Buttongrid.add(b83);
+        Buttongrid.add(b84);
+        Buttongrid.add(b85);
+        Buttongrid.add(b91);
+        Buttongrid.add(b92);
+        Buttongrid.add(b93);
+        Buttongrid.add(b94);
+        Buttongrid.add(b95);
+        Buttongrid.add(b101);
+        Buttongrid.add(b102);
+        Buttongrid.add(b103);
+        Buttongrid.add(b104);
+        Buttongrid.add(b105);
+
+        MostrarReservas(horario, "Aceptadas");
+        MostrarReservasPendientes(ReservasPendientes);
+
+    }
+
+    public void MostrarReservas(String horario, String modo){
+        int color;
+        if(modo.equals("Aceptadas")){
+            color = 0xFF00FF00;
         }
-        if(horario.charAt(1)=='1') {
-            b12.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        else{
+            color = 0xFFA60512;
         }
-        if(horario.charAt(2)=='1') {
-            b13.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+        int charpos = 0;
+        for(int i = 0; i < Buttongrid.size(); i++){
+            if(horario.charAt(charpos) == '1'){
+                Buttongrid.get(i).getBackground().setColorFilter(color, PorterDuff.Mode.MULTIPLY);
+            }
+            charpos++;
         }
-        if(horario.charAt(3)=='1') {
-            b14.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(4)=='1') {
-            b15.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(5)=='1') {
-            b21.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(6)=='1') {
-            b22.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(7)=='1') {
-            b23.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(8)=='1') {
-            b24.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(9)=='1') {
-            b25.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(10)=='1') {
-            b31.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(11)=='1') {
-            b32.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(12)=='1') {
-            b33.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(13)=='1') {
-            b34.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(14)=='1') {
-            b35.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(15)=='1') {
-            b41.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(16)=='1') {
-            b42.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(17)=='1') {
-            b43.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(18)=='1') {
-            b44.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(19)=='1') {
-            b45.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(20)=='1') {
-            b51.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(21)=='1') {
-            b52.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(22)=='1') {
-            b53.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(23)=='1') {
-            b54.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(24)=='1') {
-            b55.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(25)=='1') {
-            b61.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(26)=='1') {
-            b62.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(27)=='1') {
-            b63.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(28)=='1') {
-            b64.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(29)=='1') {
-            b65.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(30)=='1') {
-            b71.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(31)=='1') {
-            b72.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(32)=='1') {
-            b73.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(33)=='1') {
-            b74.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(34)=='1') {
-            b75.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(35)=='1') {
-            b81.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(36)=='1') {
-            b82.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(37)=='1') {
-            b83.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(38)=='1') {
-            b84.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(39)=='1') {
-            b85.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(40)=='1') {
-            b91.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(41)=='1') {
-            b92.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(42)=='1') {
-            b93.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(43)=='1') {
-            b94.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(44)=='1') {
-            b95.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(45)=='1') {
-            b101.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(46)=='1') {
-            b102.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(47)=='1') {
-            b103.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(48)=='1') {
-            b104.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
-        }
-        if(horario.charAt(49)=='1') {
-            b105.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY);
+    }
+
+    public void MostrarReservasPendientes(List<Reserva> l){
+        for(int i = 0; i < l.size(); i++){
+            MostrarReservas(l.get(i).getHorario(), "Pendientes");
         }
     }
 
     public void mostrarInfo(View view){
-        if(view==b11) {
-            Reserva reserva = buscar(0);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
+        int charpos = 0;
+        for(int i = 0; i < Buttongrid.size(); i++){
+            if(view == Buttongrid.get(i)){
+                Reserva reserva = buscar(charpos);
+                if(reserva != null){
+                    Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
+                    vistaramo.setText(reserva.getRamo());
+                    vistaprofe.setText(docente.getNombre());
+                    vistacorreo.setText(docente.getUsername() + "@udec.cl");
+                    vistaramo.setVisibility(View.VISIBLE);
+                    vistaprofe.setVisibility(View.VISIBLE);
+                    vistacorreo.setVisibility(View.VISIBLE);
+                }
+                else{
+                    vistaramo.setVisibility(View.INVISIBLE);
+                    vistaprofe.setVisibility(View.INVISIBLE);
+                    vistacorreo.setVisibility(View.INVISIBLE);
+                }
             }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
+            charpos++;
         }
-        else if(view==b12) {
-            Reserva reserva = buscar(1);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b13) {
-            Reserva reserva = buscar(2);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b14) {
-            Reserva reserva = buscar(3);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b15) {
-            Reserva reserva = buscar(4);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b21) {
-            Reserva reserva = buscar(5);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b22) {
-            Reserva reserva = buscar(6);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b23) {
-            Reserva reserva = buscar(7);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b24) {
-            Reserva reserva = buscar(8);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b25) {
-            Reserva reserva = buscar(9);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b31) {
-            Reserva reserva = buscar(10);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b32) {
-            Reserva reserva = buscar(11);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b33) {
-            Reserva reserva = buscar(12);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b34) {
-            Reserva reserva = buscar(13);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b35) {
-            Reserva reserva = buscar(14);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b41) {
-            Reserva reserva = buscar(15);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b42) {
-            Reserva reserva = buscar(16);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b43) {
-            Reserva reserva = buscar(17);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b44) {
-            Reserva reserva = buscar(18);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b45) {
-            Reserva reserva = buscar(19);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b51) {
-            Reserva reserva = buscar(20);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b52) {
-            Reserva reserva = buscar(21);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b53) {
-            Reserva reserva = buscar(22);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b54) {
-            Reserva reserva = buscar(23);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b55) {
-            Reserva reserva = buscar(24);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b61) {
-            Reserva reserva = buscar(25);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b62) {
-            Reserva reserva = buscar(26);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b63) {
-            Reserva reserva = buscar(27);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b64) {
-            Reserva reserva = buscar(28);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b65) {
-            Reserva reserva = buscar(29);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b71) {
-            Reserva reserva = buscar(30);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b72) {
-            Reserva reserva = buscar(31);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b73) {
-            Reserva reserva = buscar(32);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b74) {
-            Reserva reserva = buscar(33);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b75) {
-            Reserva reserva = buscar(34);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b81) {
-            Reserva reserva = buscar(35);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b82) {
-            Reserva reserva = buscar(36);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b83) {
-            Reserva reserva = buscar(37);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b84) {
-            Reserva reserva = buscar(38);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b85) {
-            Reserva reserva = buscar(39);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b91) {
-            Reserva reserva = buscar(40);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b92) {
-            Reserva reserva = buscar(41);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b93) {
-            Reserva reserva = buscar(42);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b94) {
-            Reserva reserva = buscar(43);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b95) {
-            Reserva reserva = buscar(44);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b101) {
-            Reserva reserva = buscar(45);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b102) {
-            Reserva reserva = buscar(46);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b103) {
-            Reserva reserva = buscar(47);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b104) {
-            Reserva reserva = buscar(48);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-        else if(view==b105) {
-            Reserva reserva = buscar(49);
-            if(reserva != null) {
-                Usuario docente = DBQueries.getUsuario(reserva.getDocente(), this);
-                vistaramo.setText(reserva.getRamo());
-                vistaprofe.setText(docente.getNombre());
-                vistacorreo.setText(docente.getUsername() + "@udec.cl");
-                vistaramo.setVisibility(View.VISIBLE);
-                vistaprofe.setVisibility(View.VISIBLE);
-                vistacorreo.setVisibility(View.VISIBLE);
-            }
-            else{
-                vistaramo.setVisibility(View.INVISIBLE);
-                vistaprofe.setVisibility(View.INVISIBLE);
-                vistacorreo.setVisibility(View.INVISIBLE);
-            }
-        }
-
     }
 
     public Reserva buscar(int hora){
         for(int i=0; i < reservas.size(); i++){
             Reserva reserva = reservas.get(i);
             String horasreserva = reserva.getHorario();
-            if(horasreserva.charAt(hora)=='1' && reserva.getEstado().equals("aceptada")){
+            if(horasreserva.charAt(hora)=='1' && (reserva.getEstado().equals("aceptada") || reserva.getEstado().equals("pendiente"))){
                 return reserva;
             }
         }

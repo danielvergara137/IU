@@ -97,9 +97,17 @@ public class ExpLVAdapterReserva extends BaseExpandableListAdapter {
             view = LayoutInflater.from(context).inflate(R.layout.elv_child, null);
         }
 
-        final String item = (String) getChild(i, i1);
+        String item = (String) getChild(i, i1);
+        String s = "";
+        for(int ii = 0; ii < item.length(); ii++){
+            if(item.charAt(ii) == ' ' && item.charAt(ii+1) == ' '){
+                s += item.substring(0, ii);
+                break;
+            }
+        }
+        final String sala = s;
         TextView textView = (TextView) view.findViewById(R.id.tvChild);
-        textView.setText(item);
+        textView.setText(sala);
 
 
         view.setOnClickListener(new View.OnClickListener() {
@@ -109,8 +117,8 @@ public class ExpLVAdapterReserva extends BaseExpandableListAdapter {
 // Add the buttons
                 builder.setPositiveButton("Solicitar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        if(DBQueries.reservar(usuario.getUsername(), item, ramo, motivo, horario, context)) {
-                            Toast.makeText(context, "Solicitud de sala " + item + " realizada con éxito", Toast.LENGTH_SHORT).show();
+                        if(DBQueries.reservar(usuario.getUsername(), sala, ramo, motivo, horario, context)) {
+                            Toast.makeText(context, "Solicitud de sala " + sala + " realizada con éxito", Toast.LENGTH_SHORT).show();
                             Intent DocenteActivity = new Intent(context, DocenteActivity.class);
                             DocenteActivity.putExtra("usuario_entidad", usuario);
                             context.startActivity(DocenteActivity);
@@ -123,7 +131,7 @@ public class ExpLVAdapterReserva extends BaseExpandableListAdapter {
                     }
                 });
 // Set other dialog properties
-                builder.setMessage("Desea solicitar la sala "+ item +" ?")
+                builder.setMessage("Desea solicitar la sala "+ sala +" ?")
                         .setTitle("Solicitud de sala");
 
 // Create the AlertDialog
