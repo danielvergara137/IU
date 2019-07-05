@@ -284,11 +284,16 @@ public class InfoSalaReservaActivity extends AppCompatActivity {
     }
 
     public String HorarioPendientes(){
-        String h1 = ReservasPendientes.get(0).getHorario();
-        for(int i = 1; i < ReservasPendientes.size(); i++){
-            h1 = UnirHorarios(h1, ReservasPendientes.get(i).getHorario());
+        if(ReservasPendientes.size() != 0){
+            String h1 = ReservasPendientes.get(0).getHorario();
+            for(int i = 1; i < ReservasPendientes.size(); i++){
+                h1 = UnirHorarios(h1, ReservasPendientes.get(i).getHorario());
+            }
+            return h1;
         }
-        return h1;
+        else{
+            return "00000000000000000000000000000000000000000000000000";
+        }
     }
 
     public void marcar(View view){
